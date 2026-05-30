@@ -1,6 +1,7 @@
 site_name: Spawn Dev Encyclopedia
 site_description: The canonical game development language and systems architecture reference.
 site_url: https://annias.github.io/spawn-dev-encyclopedia/
+
 theme:
   name: material
   palette:
@@ -33,3 +34,10 @@ nav:
   - 14. Jargon & Acronyms: 14-jargon.md
   - 15. Expert Mental Models: 15-mental-models.md
   - Master Glossary: master-glossary.md
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.mermaid_format
