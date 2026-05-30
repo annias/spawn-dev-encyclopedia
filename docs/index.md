@@ -82,22 +82,10 @@ In professional development environments, a project is never treated as a series
 
 ```mermaid
 graph TD
-    PX[Player Experience - Tension, Mastery, Discovery, Fear]
-    GD[Game Design Layer - Rules, Constraints, Loops, Economies]
-    CL[Content Layer - Levels, Assets, Dialogue, Animations]
-    TL[Technology Layer - Rendering, Physics, Netcode, Architecture]
-    PL[Production Layer - Schedules, Pipelines, Risk Mitigation]
-
-    PX <=> GD
-    GD <=> CL
-    CL <=> TL
-    TL <=> PL
-
-    style PX fill:#1a0033,stroke:#bf5af2,stroke-width:2px,color:#fff
-    style GD fill:#002b11,stroke:#30d158,stroke-width:2px,color:#fff
-    style CL fill:#1c1c1e,stroke:#8e8e93,stroke-width:1px,color:#fff
-    style TL fill:#001a33,stroke:#0a84ff,stroke-width:2px,color:#fff
-    style PL fill:#331a00,stroke:#ff9f0a,stroke-width:2px,color:#fff
+    PX[Player Experience] --> GD[Game Design]
+    GD --> CL[Content Layer]
+    CL --> TL[Technology Layer]
+    TL --> PL[Production Layer]
 ---
 
 ### 4. Think at a Senior Level Faster
