@@ -82,26 +82,22 @@ In professional development environments, a project is never treated as a series
 
 ```mermaid
 graph TD
-    %% Node Styling and Definitions
-    PX[Player Experience<br/><i>Tension, Mastery, Discovery, Fear</i>]
-    GD[Game Design Layer<br/><i>Rules, Constraints, Loops, Economies</i>]
-    CL[Content Layer<br/><i>Levels, Assets, Dialogue, Animations</i>]
-    TL[Technology Layer<br/><i>Rendering, Physics, Netcode, Architecture</i>]
-    PL[Production Layer<br/><i>Schedules, Pipelines, Risk Mitigation</i>]
+    PX[Player Experience - Tension, Mastery, Discovery, Fear]
+    GD[Game Design Layer - Rules, Constraints, Loops, Economies]
+    CL[Content Layer - Levels, Assets, Dialogue, Animations]
+    TL[Technology Layer - Rendering, Physics, Netcode, Architecture]
+    PL[Production Layer - Schedules, Pipelines, Risk Mitigation]
 
-    %% Structural Directives
-    PX <=> |Perceived Outcomes & Feedback| GD
-    GD <=> |System Requirements & Frameworks| CL
-    CL <=> |Asset Integration & Performance Limits| TL
-    TL <=> |Technical Scope & Dependencies| PL
+    PX <=> GD
+    GD <=> CL
+    CL <=> TL
+    TL <=> PL
 
-    %% Systemic Color Coding
     style PX fill:#1a0033,stroke:#bf5af2,stroke-width:2px,color:#fff
     style GD fill:#002b11,stroke:#30d158,stroke-width:2px,color:#fff
     style CL fill:#1c1c1e,stroke:#8e8e93,stroke-width:1px,color:#fff
     style TL fill:#001a33,stroke:#0a84ff,stroke-width:2px,color:#fff
     style PL fill:#331a00,stroke:#ff9f0a,stroke-width:2px,color:#fff
-
 ---
 
 ### 4. Think at a Senior Level Faster
