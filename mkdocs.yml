@@ -36,8 +36,4 @@ nav:
   - Master Glossary: master-glossary.md
 
 markdown_extensions:
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.mermaid_format
+  - pymdownx.superfences
