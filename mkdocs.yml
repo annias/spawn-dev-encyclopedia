@@ -1,6 +1,6 @@
 site_name: Spawn Dev Encyclopedia
 site_description: The canonical game development language and systems architecture reference.
-site_url: https://annias.github.io/spawn-dev-encyclopedia/
+site_url: [https://annias.github.io/spawn-dev-encyclopedia/](https://annias.github.io/spawn-dev-encyclopedia/)
 
 theme:
   name: material
@@ -17,26 +17,26 @@ theme:
 
 nav:
   - Home: index.md
-  - Core Foundations:
-    - 01. Foundations: 01-foundations.md
-    - 02. Game Design: 02-game-design.md
-    - 03. Level Design: 03-level-design.md
-    - 04. Art & VisDev: 04-art-visdev.md
-  - Technical & Production:
-    - 05. Programming & Tech: 05-programming.md
-    - 06. Audio Systems: 06-audio.md
-    - 07. UX & UI: 07-ux-ui.md
-    - 08. Production: 08-production.md
-    - 09. QA & Testing: 09-qa.md
-  - Operations & Strategy:
-    - 10. LiveOps & Analytics: 10-liveops.md
-    - 11. Studio Economics: 11-economics.md
-    - 12. Creative Direction: 12-creative-direction.md
-    - 13. Cross-Discipline Comm: 13-communication.md
-  - Intelligence & Reference:
-    - 14. Jargon & Acronyms: 14-jargon.md
-    - 15. Expert Mental Models: 15-mental-models.md
-    - Master Glossary: master-glossary.md
+  - 01. Foundations: 01-foundations.md
+  - 02. Game Design: 02-game-design.md
+  - 03. Level Design: 03-level-design.md
+  - 04. Art & VisDev: 04-art-visdev.md
+  - 05. Programming & Tech: 05-programming.md
+  - 06. Audio Systems: 06-audio.md
+  - 07. UX & UI: 07-ux-ui.md
+  - 08. Production: 08-production.md
+  - 09. QA & Testing: 09-qa.md
+  - 10. LiveOps & Analytics: 10-liveops.md
+  - 11. Studio Economics: 11-economics.md
+  - 12. Creative Direction: 12-creative-direction.md
+  - 13. Cross-Discipline Comm: 13-communication.md
+  - 14. Jargon & Acronyms: 14-jargon.md
+  - 15. Expert Mental Models: 15-mental-models.md
+  - Master Glossary: master-glossary.md
 
 markdown_extensions:
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

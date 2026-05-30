@@ -80,12 +80,6 @@ Instead of seeing isolated features, you will begin to see:
 
 In professional development environments, a project is never treated as a series of flat features. It is built as a highly interdependent stack where every design decision triggers downstream technical constraints.
 
-```mermaid
-graph TD
-    PX[Player Experience] --> GD[Game Design]
-    GD --> CL[Content Layer]
-    CL --> TL[Technology Layer]
-    TL --> PL[Production Layer]
 ---
 
 ### 4. Think at a Senior Level Faster
