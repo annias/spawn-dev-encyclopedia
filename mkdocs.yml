@@ -33,3 +33,13 @@ nav:
   - 14. Jargon & Acronyms: 14-jargon.md
   - 15. Expert Mental Models: 15-mental-models.md
   - Master Glossary: master-glossary.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
