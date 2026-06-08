@@ -1,6 +1,6 @@
 site_name: Spawn Dev Encyclopedia
 site_description: The canonical game development language and systems architecture reference.
-site_url: [https://annias.github.io/spawn-dev-encyclopedia/](https://annias.github.io/spawn-dev-encyclopedia/)
+site_url: https://annias.github.io/spawn-dev-encyclopedia/
 
 theme:
   name: material
