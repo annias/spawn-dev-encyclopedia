@@ -34,29 +34,31 @@ flowchart LR
 In reality, professional studios operate in a highly interconnected network of teams, feedback loops, dependencies, and constraints. Game design, art, code, production, and QA are constantly reacting to, modifying, and limiting each other.
 
 ```mermaid
-flowchart TD
-    Design --> Programming
-    Programming --> Design
+flowchart LR
+    subgraph Management["Management & Planning"]
+        Marketing["Marketing"] --> Production["Production"]
+    end
 
-    Art --> Programming
-    Programming --> Art
+    subgraph Core["Core Creation Loop"]
+        Design["Design"] <--> Programming["Programming"]
+        Art["Art"] <--> Programming
+        Audio["Audio"] --> Design
+        Audio --> Programming
+    end
+
+    subgraph Validation["Validation & Release"]
+        QA["QA"]
+    end
 
     Production --> Design
     Production --> Programming
     Production --> Art
 
+    Programming --> QA
+    Art --> QA
     QA --> Design
     QA --> Programming
     QA --> Art
-
-    Audio --> Design
-    Audio --> Programming
-
-    Marketing --> Production
-
-    Programming --> QA
-    Art --> QA
-
     QA --> Production
 ```
 *How professional studios actually operate.*
@@ -81,28 +83,12 @@ They think in terms of:
 - User experience outcomes
 
 ```mermaid
-mindmap
-root(("Professional Thinking"))
-    Systems
-        Economy
-        Progression
-        Combat
-    Constraints
-        Budget
-        Time
-        Team
-    Risk
-        Technical
-        Production
-        Market
-    Tradeoffs
-        Quality
-        Scope
-        Speed
-    Outcomes
-        Retention
-        Engagement
-        Revenue
+flowchart TD
+    Root["Professional Thinking"] --> Systems["Systems<br>(Economy, Progression, Combat)"]
+    Root --> Constraints["Constraints<br>(Budget, Time, Team)"]
+    Root --> Risk["Risk<br>(Technical, Production, Market)"]
+    Root --> Tradeoffs["Tradeoffs<br>(Quality, Scope, Speed)"]
+    Root --> Outcomes["Outcomes<br>(Retention, Engagement, Revenue)"]
 ```
 
 Senior developers think in terms of systems, constraints, risks, tradeoffs, and outcomes rather than individual implementation details. Every addition or change is evaluated by its systemic cost, how it affects production schedules, and the risk it introduces to the project.
@@ -260,17 +246,22 @@ Viewing a game as a network of connected systems prevents the "silo effect," whe
 Just as the game itself is a system of rules, the studio that creates it is a system of specialized, coordinated teams.
 
 ```mermaid
-mindmap
-root(("Game Studio"))
-    Design
-    Programming
-    Art
-    Audio
-    Production
-    QA
-    Marketing
-    Community
-    Analytics
+flowchart LR
+    Studio["Game Studio"] --> Core["Core Creation"]
+    Studio --> Support["Production & QA"]
+    Studio --> Audience["Audience & Growth"]
+
+    Core --> Design["Design"]
+    Core --> Programming["Programming"]
+    Core --> Art["Art"]
+    Core --> Audio["Audio"]
+
+    Support --> Production["Production"]
+    Support --> QA["QA"]
+    Support --> Analytics["Analytics"]
+
+    Audience --> Marketing["Marketing"]
+    Audience --> Community["Community"]
 ```
 
 A successful game requires all parts of the studio to operate as a coherent organism:

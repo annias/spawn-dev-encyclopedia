@@ -88,33 +88,12 @@ This is both a **reference system and a learning tool**.
 Every discipline views the exact same game feature through its own unique lens. Understanding a system requires understanding how each role observes and interacts with it.
 
 ```mermaid
-mindmap
-root(("Combat System"))
-
-    Designer
-        Mechanics
-        Balance
-        Progression
-
-    Programmer
-        "State Machines"
-        Components
-        Networking
-
-    Artist
-        Animation
-        FX
-        "Visual Feedback"
-
-    Audio
-        SFX
-        Mix
-        Feedback
-
-    Producer
-        Scope
-        Resources
-        Schedule
+flowchart TD
+    Combat["Combat System"] --> Designer["Designer<br>(Mechanics, Balance, Progression)"]
+    Combat --> Programmer["Programmer<br>(State Machines, Components, Networking)"]
+    Combat --> Artist["Artist<br>(Animation, FX, Visual Feedback)"]
+    Combat --> Audio["Audio<br>(SFX, Mix, Feedback)"]
+    Combat --> Producer["Producer<br>(Scope, Resources, Schedule)"]
 ```
 
 For example, when developing a combat system:
@@ -185,22 +164,13 @@ One of the long-term goals of this encyclopedia is to act as a translation dicti
 The knowledge base is structured around key domains that collectively define the game development process.
 
 ```mermaid
-mindmap
-root(("Game Development"))
-
-    "Game Design"
-    "Level Design"
-    Programming
-    Art
-    Audio
-    "UX/UI"
-    Production
-    QA
-    LiveOps
-    Business
-    Theory
-    Communication
-    "Mental Models"
+flowchart TD
+    GD["Game Development Domains"]
+    
+    GD --> Design["Design & UX<br>(Game Design, Level Design, UX/UI, Theory)"]
+    GD --> Tech["Tech & QA<br>(Programming, QA, LiveOps)"]
+    GD --> Creative["Art & Audio<br>(Art, Audio)"]
+    GD --> Production["Business & Management<br>(Production, Economics, Communication, Mental Models)"]
 ```
 
 ### Domain Outline
