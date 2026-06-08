@@ -1,0 +1,1057 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The canonical game development language and systems architecture reference.">
+      
+      
+      
+        <link rel="canonical" href="https://annias.github.io/spawn-dev-encyclopedia/master-glossary/">
+      
+      
+        <link rel="prev" href="../15-mental-models/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Master Glossary - Spawn Dev Encyclopedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#game-development-language-concepts-encyclopedia" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-header__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Spawn Dev Encyclopedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Master Glossary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-nav__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Spawn Dev Encyclopedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-game-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Game Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-level-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Level Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-art-visdev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Art & VisDev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Programming & Tech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Audio Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-ux-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. UX & UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-production/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Production
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09. QA & Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-liveops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. LiveOps & Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Studio Economics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-creative-direction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Creative Direction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Cross-Discipline Comm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-jargon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Jargon & Acronyms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-mental-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Expert Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Glossary
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#master-glossary-index-condensed-reference-edition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MASTER GLOSSARY INDEX (Condensed Reference Edition)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#master-glossary-index-condensed-reference-edition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MASTER GLOSSARY INDEX (Condensed Reference Edition)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="game-development-language-concepts-encyclopedia">GAME DEVELOPMENT LANGUAGE &amp; CONCEPTS ENCYCLOPEDIA</h1>
+<h2 id="master-glossary-index-condensed-reference-edition">MASTER GLOSSARY INDEX (Condensed Reference Edition)</h2>
+<hr />
+<h1 id="a">A</h1>
+<p><strong>A/B Testing</strong> — Comparing two versions of a feature to measure player behavior differences.<br />
+<strong>AI (Artificial Intelligence)</strong> — Systems controlling non-player behavior (often rule-based, not true intelligence).<br />
+<strong>Alpha</strong> — Early playable phase where core systems exist but are unfinished.<br />
+<strong>Animation State Machine</strong> — System controlling animation transitions based on player or AI state.<br />
+<strong>ARPU / ARPPU</strong> — Revenue metrics per user / paying user.<br />
+<strong>Asset Pipeline</strong> — Workflow for creating, exporting, and integrating game assets.<br />
+__A_ Pathfinding_<em> — Algorithm for optimal path navigation in AI systems.<br />
+</em><em>Affordance</em><em> — Visual or functional cues indicating interactivity.<br />
+</em><em>Audio Middleware</em>* — External audio systems (e.g., FMOD, Wwise).</p>
+<hr />
+<h1 id="b">B</h1>
+<p><strong>Bandwidth (Production)</strong> — Available working capacity of a developer/team.<br />
+<strong>Behavior Tree</strong> — Hierarchical AI decision system.<br />
+<strong>Beta</strong> — Late development stage focusing on stability and bug fixing.<br />
+<strong>Bottleneck</strong> — System or person limiting production flow.<br />
+<strong>Build</strong> — Compiled playable version of a game.<br />
+<strong>Burndown Chart</strong> — Graph tracking remaining work over time.<br />
+<strong>Buff</strong> — Increase in power or effectiveness of a system.<br />
+<strong>Bug</strong> — Unintended system behavior.<br />
+<strong>Baking (Art)</strong> — Precomputing lighting or detail into textures.<br />
+<strong>Blocker</strong> — Issue preventing progress.<br />
+<strong>Branching (Git)</strong> — Parallel code development streams.</p>
+<hr />
+<h1 id="c">C</h1>
+<p><strong>Camera Framing</strong> — Composition of visual focus in gameplay or cinematics.<br />
+<strong>Cognitive Load</strong> — Mental effort required to process information.<br />
+<strong>Collision Detection</strong> — System determining object intersections.<br />
+<strong>Core Loop</strong> — Repeated gameplay cycle driving engagement.<br />
+<strong>Critical Path</strong> — Sequence of tasks determining project timeline.<br />
+<strong>Crunch</strong> — Excessive overtime during development (controversial).<br />
+<strong>Culling (Occlusion)</strong> — Not rendering unseen objects.<br />
+<strong>Client-Server Model</strong> — Multiplayer architecture with authoritative server.<br />
+<strong>Cooldown</strong> — Time delay before ability reuse.<br />
+<strong>Crafting System</strong> — Resource conversion mechanics for progression.<br />
+<strong>Creative Direction</strong> — Unified vision guiding all disciplines.</p>
+<hr />
+<h1 id="d">D</h1>
+<p><strong>DAU / MAU</strong> — Daily / Monthly Active Users.<br />
+<strong>Data-Oriented Design (DOD)</strong> — Performance-focused programming model.<br />
+<strong>Debugging</strong> — Process of identifying and fixing errors.<br />
+<strong>Delta Time</strong> — Time between frames for consistent simulation.<br />
+<strong>Design Pillars</strong> — Core principles guiding game design decisions.<br />
+<strong>Dependency</strong> — Task or system required before another can function.<br />
+<strong>Diegetic UI</strong> — UI existing within game world.<br />
+<strong>Difficulty Curve</strong> — Progression of challenge over time.<br />
+<strong>Draw Call</strong> — GPU instruction to render objects.<br />
+<strong>DLC</strong> — Downloadable Content.<br />
+<strong>Dissonance (Ludonarrative)</strong> — Conflict between gameplay and story.</p>
+<hr />
+<h1 id="e">E</h1>
+<p><strong>Edge Case</strong> — Rare or extreme system condition.<br />
+<strong>ECS (Entity Component System)</strong> — Data-driven architecture pattern.<br />
+<strong>Emergent Gameplay</strong> — Unexpected outcomes from system interactions.<br />
+<strong>Engagement Loop</strong> — Systems designed to retain players.<br />
+<strong>Engine</strong> — Core software framework for game creation.<br />
+<strong>Event System</strong> — Decoupled system communication model.<br />
+<strong>Exploit</strong> — Unintended player advantage in system.<br />
+<strong>Early Access</strong> — Public pre-release version for feedback/testing.</p>
+<hr />
+<h1 id="f">F</h1>
+<p><strong>F2P (Free-to-Play)</strong> — Monetization model without upfront cost.<br />
+<strong>Fidelity</strong> — Level of detail or realism.<br />
+<strong>Frame Rate (FPS)</strong> — Number of rendered frames per second.<br />
+<strong>Frame Time</strong> — Time taken to process a single frame.<br />
+<strong>Friction (UX)</strong> — Barriers slowing user interaction.<br />
+<strong>Foley</strong> — Recorded real-world sound effects.<br />
+<strong>FOV (Field of View)</strong> — Camera viewing angle.<br />
+<strong>Feedback Loop</strong> — System where output influences future input.<br />
+<strong>Feature Creep</strong> — Uncontrolled feature expansion.<br />
+<strong>Flow State</strong> — Optimal player engagement state.<br />
+<strong>Funnel (Conversion)</strong> — Player progression through stages.</p>
+<hr />
+<h1 id="g">G</h1>
+<p><strong>Game Loop</strong> — Continuous update cycle of game simulation.<br />
+<strong>Gameplay Feel (“Game Feel”)</strong> — Responsiveness and tactile quality of interaction.<br />
+<strong>Gacha</strong> — Randomized reward monetization system.<br />
+<strong>GAAS (Games as a Service)</strong> — Continuous live-updated games.<br />
+<strong>Gestalt Principles</strong> — Visual perception rules in design.<br />
+<strong>GPU Bound</strong> — Performance limited by graphics processing.<br />
+<strong>Gold Master (GM)</strong> — Final release version.<br />
+<strong>Greenlight</strong> — Approval to begin full production.</p>
+<hr />
+<h1 id="h">H</h1>
+<p><strong>Haptics</strong> — Vibration-based feedback.<br />
+<strong>Headless System</strong> — System without visual representation (backend logic).<br />
+<strong>Hitbox</strong> — Area used for detecting collisions in gameplay.<br />
+<strong>HUD (Heads-Up Display)</strong> — On-screen gameplay information.<br />
+<strong>Hotfix</strong> — Urgent patch for critical issues.<br />
+<strong>HRTF</strong> — Audio system simulating human spatial hearing.</p>
+<hr />
+<h1 id="i">I</h1>
+<p><strong>IK / FK</strong> — Inverse / Forward Kinematics in animation.<br />
+<strong>Input Buffering</strong> — Allowing delayed input execution.<br />
+<strong>Instance (Game Object)</strong> — Runtime object created from a template.<br />
+<strong>Iteration</strong> — Repeated refinement cycle in development.<br />
+<strong>Inventory System</strong> — Item management structure.<br />
+<strong>IP (Intellectual Property)</strong> — Owned franchise or universe.</p>
+<hr />
+<h1 id="j">J</h1>
+<p><strong>Jank</strong> — Unpolished or awkward system behavior.<br />
+<strong>Juice</strong> — Enhanced feedback (shake, sound, effects).<br />
+<strong>Jira Ticket</strong> — Task tracking entry in production systems.</p>
+<hr />
+<h1 id="k">K</h1>
+<p><strong>KPI (Key Performance Indicator)</strong> — Success measurement metric.<br />
+<strong>Kitbash</strong> — Reusing modular assets creatively.</p>
+<hr />
+<h1 id="l">L</h1>
+<p><strong>Latency</strong> — Delay between input and response.<br />
+<strong>LOD (Level of Detail)</strong> — Reduced complexity models at distance.<br />
+<strong>LiveOps</strong> — Ongoing live game management.<br />
+<strong>LTV (Lifetime Value)</strong> — Total revenue per player over time.<br />
+<strong>Ludonarrative</strong> — Relationship between gameplay and story.<br />
+<strong>Lightmap</strong> — Precomputed lighting texture.</p>
+<hr />
+<h1 id="m">M</h1>
+<p><strong>MAU</strong> — Monthly Active Users.<br />
+<strong>Meta (Game Meta)</strong> — Dominant strategies in gameplay.<br />
+<strong>Middleware</strong> — External tools integrated into engine.<br />
+<strong>Memory Leak</strong> — Unreleased memory causing performance issues.<br />
+<strong>MVP (Minimum Viable Product)</strong> — Minimal playable system.<br />
+<strong>Matchmaking</strong> — Player pairing system in multiplayer.<br />
+<strong>Microtransaction</strong> — Small in-game purchase.<br />
+<strong>Mise-en-scène</strong> — Visual arrangement in a scene.</p>
+<hr />
+<h1 id="n">N</h1>
+<p><strong>NavMesh</strong> — Navigation system for AI movement.<br />
+<strong>Netcode</strong> — Networking implementation for multiplayer.<br />
+<strong>Nerf</strong> — Reduction in system power.<br />
+<strong>Node System</strong> — Graph-based logic structure.<br />
+<strong>Non-Diegetic UI</strong> — UI outside game world.</p>
+<hr />
+<h1 id="o">O</h1>
+<p><strong>Occlusion Culling</strong> — Not rendering hidden objects.<br />
+<strong>OOP (Object-Oriented Programming)</strong> — Class-based programming model.<br />
+<strong>Onboarding</strong> — Early player learning experience.<br />
+<strong>Open World</strong> — Non-linear exploration structure.<br />
+<strong>Overhead</strong> — Extra system cost beyond core function.</p>
+<hr />
+<h1 id="p">P</h1>
+<p><strong>Patch</strong> — Game update.<br />
+<strong>Pacing</strong> — Control of gameplay rhythm.<br />
+<strong>PBR (Physically Based Rendering)</strong> — Realistic material system.<br />
+<strong>Pipeline</strong> — Workflow system for production.<br />
+<strong>Playtest</strong> — Player testing session.<br />
+<strong>Player Agency</strong> — Degree of control player has.<br />
+<strong>POC (Proof of Concept)</strong> — Feasibility prototype.<br />
+<strong>Postmortem</strong> — Analysis after project completion.<br />
+<strong>Procedural Generation</strong> — System-generated content.<br />
+<strong>Production</strong> — Phase of active game development.<br />
+<strong>Profiling</strong> — Performance analysis process.<br />
+<strong>P2W (Pay-to-Win)</strong> — Monetization giving gameplay advantage.</p>
+<hr />
+<h1 id="q">Q</h1>
+<p><strong>QA (Quality Assurance)</strong> — Testing and validation process.<br />
+<strong>QC (Quality Control)</strong> — Output verification testing.<br />
+<strong>Quest System</strong> — Structured objective system.</p>
+<hr />
+<h1 id="r">R</h1>
+<p><strong>Raycasting</strong> — Line-based collision detection.<br />
+<strong>Repro Steps</strong> — Steps to reproduce a bug.<br />
+<strong>Retention</strong> — Player return rate.<br />
+<strong>Regression</strong> — Reappearing bug after fix.<br />
+<strong>Rigidbody</strong> — Physics-simulated object.<br />
+<strong>RTPC</strong> — Real-time audio parameter control.</p>
+<hr />
+<h1 id="s">S</h1>
+<p><strong>Scope Creep</strong> — Uncontrolled feature expansion.<br />
+<strong>Shader</strong> — GPU visual effect program.<br />
+<strong>Silhouette Readability</strong> — Recognizability of shape.<br />
+<strong>Skill Ceiling/Floor</strong> — Mastery range of a system.<br />
+<strong>Spawn System</strong> — Entity generation logic.<br />
+<strong>Stinger (Audio)</strong> — Short audio cue.<br />
+<strong>State Machine</strong> — System with defined behavior states.<br />
+<strong>Stickiness</strong> — Engagement metric.<br />
+<strong>Sprint</strong> — Timeboxed development cycle.<br />
+<strong>Steam/Platform Holder</strong> — Distribution platform provider.<br />
+<strong>Sync (Meeting)</strong> — Cross-team alignment session.</p>
+<hr />
+<h1 id="t">T</h1>
+<p><strong>Tech Debt</strong> — Accumulated inefficiencies in code/design.<br />
+<strong>Tick Rate</strong> — Frequency of simulation updates.<br />
+<strong>Telemetry</strong> — Player behavior data collection.<br />
+<strong>TDD (Technical Design Document)</strong> — Engineering system spec.<br />
+<strong>Triage</strong> — Bug prioritization process.<br />
+<strong>Texture Mapping</strong> — Applying images to 3D surfaces.</p>
+<hr />
+<h1 id="u">U</h1>
+<p><strong>UI (User Interface)</strong> — Visual interaction layer.<br />
+<strong>UX (User Experience)</strong> — Overall interaction experience.<br />
+<strong>Utility AI</strong> — AI decision system based on scoring.</p>
+<hr />
+<h1 id="v">V</h1>
+<p><strong>VFX (Visual Effects)</strong> — Particle and visual simulation effects.<br />
+<strong>Vertical Slice</strong> — Fully polished representative gameplay segment.<br />
+<strong>Velocity (Scrum)</strong> — Work output per sprint.<br />
+<strong>Voice Limiting</strong> — Restricting simultaneous audio sources.</p>
+<hr />
+<h1 id="w">W</h1>
+<p><strong>Waypoint</strong> — Navigation marker in level design.<br />
+<strong>WIP (Work In Progress)</strong> — Incomplete asset/system.<br />
+<strong>Wwise / FMOD</strong> — Audio middleware tools.</p>
+<hr />
+<h1 id="x-y-z-advanced-rare-terms">X / Y / Z (Advanced / Rare Terms)</h1>
+<p><strong>Z-Depth</strong> — Distance from camera in rendering.<br />
+<strong>Zone Design</strong> — Structuring game world regions.<br />
+<strong>Z-fighting</strong> — Rendering artifact from overlapping surfaces.</p>
+<hr />
+<h1 id="final-note-professional-interpretation-layer">FINAL NOTE (Professional Interpretation Layer)</h1>
+<p>This glossary is not just vocabulary.</p>
+<p>In professional game development:</p>
+<blockquote>
+<p>Each term is a compressed representation of systems, workflows, and constraints that only fully make sense inside a production environment.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

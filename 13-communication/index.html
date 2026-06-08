@@ -1,0 +1,1209 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The canonical game development language and systems architecture reference.">
+      
+      
+      
+        <link rel="canonical" href="https://annias.github.io/spawn-dev-encyclopedia/13-communication/">
+      
+      
+        <link rel="prev" href="../12-creative-direction/">
+      
+      
+        <link rel="next" href="../14-jargon/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>13. Cross-Discipline Comm - Spawn Dev Encyclopedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#game-development-language-concepts-encyclopedia" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-header__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Spawn Dev Encyclopedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              13. Cross-Discipline Comm
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-nav__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Spawn Dev Encyclopedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-game-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Game Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-level-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Level Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-art-visdev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Art & VisDev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Programming & Tech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Audio Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-ux-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. UX & UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-production/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Production
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09. QA & Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-liveops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. LiveOps & Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Studio Economics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-creative-direction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Creative Direction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Cross-Discipline Comm
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Cross-Discipline Comm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-13-cross-disciplinary-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 13 — Cross-Disciplinary Communication
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-jargon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Jargon & Acronyms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-mental-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Expert Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-13-cross-disciplinary-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 13 — Cross-Disciplinary Communication
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="game-development-language-concepts-encyclopedia">GAME DEVELOPMENT LANGUAGE &amp; CONCEPTS ENCYCLOPEDIA</h1>
+<h2 id="chapter-13-cross-disciplinary-communication">Chapter 13 — Cross-Disciplinary Communication</h2>
+<hr />
+<h1 id="the-core-mental-shift-what-communication-actually-means-in-game-development">The Core Mental Shift: What Communication Actually Means in Game Development</h1>
+<p>In early development, communication is often assumed to mean:</p>
+<blockquote>
+<p>“Explaining ideas clearly.”</p>
+</blockquote>
+<p>In professional game development, communication is:</p>
+<blockquote>
+<p>The real-time translation of intent between incompatible specialist languages under production constraints.</p>
+</blockquote>
+<p>A critical AAA truth:</p>
+<blockquote>
+<p>“Most production failures are not technical failures — they are translation failures between disciplines.”</p>
+</blockquote>
+<p>Each discipline speaks a different “language of reality”:</p>
+<ul>
+<li>Designers speak in systems and player behavior</li>
+<li>Artists speak in perception and visual intent</li>
+<li>Engineers speak in constraints and architecture</li>
+<li>Audio speaks in time and emotion</li>
+<li>Producers speak in schedules and risk</li>
+</ul>
+<hr />
+<h1 id="chapter-1-the-fundamental-translation-problem">Chapter 1: The Fundamental Translation Problem</h1>
+<hr />
+<h2 id="the-same-idea-multiple-languages">The Same Idea, Multiple Languages</h2>
+<p>Example concept: <em>“A powerful sword attack”</em></p>
+<hr />
+<h3 id="designer-interpretation">Designer interpretation</h3>
+<ul>
+<li>Damage values</li>
+<li>Cooldown</li>
+<li>Hitbox behavior</li>
+<li>Risk/reward balance</li>
+</ul>
+<hr />
+<h3 id="programmer-interpretation">Programmer interpretation</h3>
+<ul>
+<li>Animation state machine</li>
+<li>Collision detection timing</li>
+<li>Input buffering</li>
+<li>Frame data</li>
+</ul>
+<hr />
+<h3 id="artist-interpretation">Artist interpretation</h3>
+<ul>
+<li>Silhouette clarity</li>
+<li>Motion readability</li>
+<li>Impact visual effects</li>
+<li>Character posing</li>
+</ul>
+<hr />
+<h3 id="audio-interpretation">Audio interpretation</h3>
+<ul>
+<li>Impact intensity</li>
+<li>Frequency layering</li>
+<li>Timing synchronization</li>
+</ul>
+<hr />
+<h3 id="producer-interpretation">Producer interpretation</h3>
+<ul>
+<li>Time cost</li>
+<li>Asset requirements</li>
+<li>Risk impact on schedule</li>
+</ul>
+<hr />
+<p>Same idea. Five incompatible translations.</p>
+<hr />
+<h1 id="chapter-2-the-intent-implementation-pipeline">Chapter 2: The “Intent → Implementation” Pipeline</h1>
+<hr />
+<h2 id="creative-intent">Creative Intent</h2>
+<p>High-level idea:</p>
+<blockquote>
+<p>“This attack should feel heavy and decisive.”</p>
+</blockquote>
+<hr />
+<h2 id="system-design-translation">System Design Translation</h2>
+<ul>
+<li>Slow startup</li>
+<li>High damage</li>
+<li>Commitment frames</li>
+<li>Strong animation anticipation</li>
+</ul>
+<hr />
+<h2 id="technical-implementation">Technical Implementation</h2>
+<ul>
+<li>Animation state machine timing</li>
+<li>Hitbox activation windows</li>
+<li>Input locking rules</li>
+</ul>
+<hr />
+<h2 id="presentation-layer">Presentation Layer</h2>
+<ul>
+<li>Camera shake</li>
+<li>Sound impact</li>
+<li>Particle effects</li>
+<li>Motion blur</li>
+</ul>
+<hr />
+<h2 id="production-constraint-layer">Production Constraint Layer</h2>
+<ul>
+<li>Time budget</li>
+<li>Performance cost</li>
+<li>Asset reuse limitations</li>
+</ul>
+<hr />
+<h1 id="chapter-3-designer-programmer-communication">Chapter 3: Designer → Programmer Communication</h1>
+<hr />
+<h2 id="designers-think-in">Designers Think In:</h2>
+<ul>
+<li>Player experience</li>
+<li>System behavior</li>
+<li>Abstract rules</li>
+</ul>
+<hr />
+<h2 id="programmers-think-in">Programmers Think In:</h2>
+<ul>
+<li>Data structures</li>
+<li>State transitions</li>
+<li>Performance constraints</li>
+</ul>
+<hr />
+<h2 id="translation-example">Translation Example</h2>
+<h3 id="designer-says">Designer says:</h3>
+<blockquote>
+<p>“The dodge should feel responsive and forgiving.”</p>
+</blockquote>
+<h3 id="programmer-translates">Programmer translates:</h3>
+<ul>
+<li>Input buffer window = X ms</li>
+<li>Cancel frames = allowed during attack animation</li>
+<li>State priority = dodge overrides attack</li>
+<li>Latency compensation logic required</li>
+</ul>
+<hr />
+<h2 id="key-communication-terms">Key Communication Terms</h2>
+<ul>
+<li>“State machine”</li>
+<li>“Frame window”</li>
+<li>“Input buffering”</li>
+<li>“Edge case handling”</li>
+</ul>
+<hr />
+<h1 id="chapter-4-artist-technical-artist-communication">Chapter 4: Artist → Technical Artist Communication</h1>
+<hr />
+<h2 id="artists-think-in">Artists Think In:</h2>
+<ul>
+<li>Emotion</li>
+<li>Shape language</li>
+<li>Composition</li>
+<li>Mood</li>
+</ul>
+<hr />
+<h2 id="technical-artists-think-in">Technical Artists Think In:</h2>
+<ul>
+<li>Engine constraints</li>
+<li>Shader behavior</li>
+<li>Memory usage</li>
+<li>Pipeline limitations</li>
+</ul>
+<hr />
+<h2 id="translation-example_1">Translation Example</h2>
+<h3 id="artist">Artist:</h3>
+<blockquote>
+<p>“This armor should feel ethereal and lightweight.”</p>
+</blockquote>
+<h3 id="technical-art-translation">Technical Art Translation:</h3>
+<ul>
+<li>Transparent shader with subsurface scattering</li>
+<li>Reduced geometric density</li>
+<li>Floating particle systems</li>
+<li>Animated material emissive layer</li>
+</ul>
+<hr />
+<h2 id="common-breakdown-point">Common Breakdown Point</h2>
+<p>Artists assume:</p>
+<blockquote>
+<p>“If it looks right, it is right.”</p>
+</blockquote>
+<p>Engineers require:</p>
+<blockquote>
+<p>“If it performs within budget, it is valid.”</p>
+</blockquote>
+<hr />
+<h1 id="chapter-5-producer-communication-language">Chapter 5: Producer Communication Language</h1>
+<hr />
+<h2 id="producers-think-in">Producers Think In:</h2>
+<ul>
+<li>Time</li>
+<li>Scope</li>
+<li>Risk</li>
+<li>Resources</li>
+</ul>
+<hr />
+<h2 id="key-producer-questions">Key Producer Questions</h2>
+<ul>
+<li>How long will this take?</li>
+<li>What dependencies does it have?</li>
+<li>What breaks if this slips?</li>
+<li>What is the fallback plan?</li>
+</ul>
+<hr />
+<h2 id="translation-example_2">Translation Example</h2>
+<h3 id="designer">Designer:</h3>
+<blockquote>
+<p>“We should add a dynamic weather system.”</p>
+</blockquote>
+<h3 id="producer">Producer:</h3>
+<ul>
+<li>Scope increase?</li>
+<li>Engineering cost?</li>
+<li>Art asset impact?</li>
+<li>Performance risk?</li>
+<li>Timeline impact?</li>
+</ul>
+<hr />
+<h2 id="production-terms">Production Terms</h2>
+<ul>
+<li>“Scope impact”</li>
+<li>“Dependency chain”</li>
+<li>“Critical path”</li>
+<li>“Resource allocation”</li>
+</ul>
+<hr />
+<h1 id="chapter-6-director-level-communication">Chapter 6: Director-Level Communication</h1>
+<hr />
+<h2 id="directors-think-in">Directors Think In:</h2>
+<ul>
+<li>Emotional coherence</li>
+<li>System alignment</li>
+<li>Experience consistency</li>
+</ul>
+<hr />
+<h2 id="director-translation-layer">Director Translation Layer</h2>
+<p>They unify:</p>
+<ul>
+<li>Design intent</li>
+<li>Visual direction</li>
+<li>Audio mood</li>
+<li>Narrative tone</li>
+</ul>
+<hr />
+<h2 id="example-directive">Example Directive:</h2>
+<blockquote>
+<p>“The player should feel hunted but never helpless.”</p>
+</blockquote>
+<p>Becomes:</p>
+<ul>
+<li>Design: limited resources but escape options</li>
+<li>AI: pressure without guaranteed kills</li>
+<li>Audio: tension layering</li>
+<li>Visuals: obscured sightlines</li>
+</ul>
+<hr />
+<h1 id="chapter-7-common-miscommunication-patterns">Chapter 7: Common Miscommunication Patterns</h1>
+<hr />
+<h2 id="1-feels-good-problem">1. “Feels Good” Problem</h2>
+<p>Phrase:</p>
+<blockquote>
+<p>“Make it feel better.”</p>
+</blockquote>
+<p>Issue:</p>
+<p>No measurable definition.</p>
+<p>Fix:</p>
+<p>Translate into:</p>
+<ul>
+<li>Input latency target</li>
+<li>Animation timing windows</li>
+<li>Feedback intensity levels</li>
+</ul>
+<hr />
+<h2 id="2-just-make-it-work">2. “Just Make It Work”</h2>
+<p>Usually hides:</p>
+<ul>
+<li>Undefined requirements</li>
+<li>Missing constraints</li>
+<li>Unrealistic expectations</li>
+</ul>
+<hr />
+<h2 id="3-small-feature">3. “Small Feature”</h2>
+<p>Often implies:</p>
+<ul>
+<li>Large hidden system cost</li>
+<li>Multiple dependencies</li>
+</ul>
+<hr />
+<h2 id="4-easy-change">4. “Easy Change”</h2>
+<p>Usually means:</p>
+<blockquote>
+<p>“Unknown complexity in downstream systems”</p>
+</blockquote>
+<hr />
+<h1 id="chapter-8-translation-artifacts-studio-reality">Chapter 8: Translation Artifacts (Studio Reality)</h1>
+<hr />
+<h2 id="design-document-gdd">Design Document (GDD)</h2>
+<p>Attempts to unify intent across disciplines.</p>
+<hr />
+<h2 id="tech-spec">Tech Spec</h2>
+<p>Engineer-readable system definition.</p>
+<hr />
+<h2 id="art-brief">Art Brief</h2>
+<p>Visual intent + constraints.</p>
+<hr />
+<h2 id="audio-brief">Audio Brief</h2>
+<p>Emotional + mechanical sound requirements.</p>
+<hr />
+<h2 id="jira-ticket">Jira Ticket</h2>
+<p>Atomic unit of work tracking.</p>
+<hr />
+<p>Each document is:</p>
+<blockquote>
+<p>A translation layer between incompatible cognitive models.</p>
+</blockquote>
+<hr />
+<h1 id="chapter-9-alignment-meetings-critical-studio-tool">Chapter 9: Alignment Meetings (Critical Studio Tool)</h1>
+<hr />
+<h2 id="sync-meeting">Sync Meeting</h2>
+<p>Short alignment check:</p>
+<ul>
+<li>Progress</li>
+<li>Blockers</li>
+<li>Dependencies</li>
+</ul>
+<hr />
+<h2 id="cross-discipline-review">Cross-Discipline Review</h2>
+<p>Ensures:</p>
+<ul>
+<li>Systems coherence</li>
+<li>Visual consistency</li>
+<li>Technical feasibility</li>
+</ul>
+<hr />
+<h2 id="playtest-review">Playtest Review</h2>
+<p>Shared observation of player behavior.</p>
+<p>Often reveals:</p>
+<blockquote>
+<p>Communication failures as gameplay failures.</p>
+</blockquote>
+<hr />
+<h1 id="chapter-10-senior-communication-mental-model">Chapter 10: Senior Communication Mental Model</h1>
+<hr />
+<h2 id="beginner-thinking">Beginner Thinking</h2>
+<blockquote>
+<p>“Did I explain my idea clearly?”</p>
+</blockquote>
+<hr />
+<h2 id="intermediate-thinking">Intermediate Thinking</h2>
+<blockquote>
+<p>“Did other people understand my idea?”</p>
+</blockquote>
+<hr />
+<h2 id="senior-thinking">Senior Thinking</h2>
+<blockquote>
+<p>“Did my idea survive translation into other disciplines without distortion?”</p>
+</blockquote>
+<hr />
+<h2 id="expert-thinking">Expert Thinking</h2>
+<blockquote>
+<p>“How do I encode intent so that it remains stable across design, engineering, art, audio, and production constraints without relying on verbal interpretation?”</p>
+</blockquote>
+<hr />
+<h1 id="key-insight">Key Insight</h1>
+<p>In professional studios:</p>
+<blockquote>
+<p>Communication is not transmission — it is continuous translation between incompatible systems of expertise.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

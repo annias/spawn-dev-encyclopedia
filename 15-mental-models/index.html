@@ -1,0 +1,1217 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The canonical game development language and systems architecture reference.">
+      
+      
+      
+        <link rel="canonical" href="https://annias.github.io/spawn-dev-encyclopedia/15-mental-models/">
+      
+      
+        <link rel="prev" href="../14-jargon/">
+      
+      
+        <link rel="next" href="../master-glossary/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>15. Expert Mental Models - Spawn Dev Encyclopedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#game-development-language-concepts-encyclopedia" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-header__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Spawn Dev Encyclopedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              15. Expert Mental Models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-nav__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Spawn Dev Encyclopedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-game-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Game Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-level-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Level Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-art-visdev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Art & VisDev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Programming & Tech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Audio Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-ux-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. UX & UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-production/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Production
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09. QA & Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-liveops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. LiveOps & Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Studio Economics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-creative-direction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Creative Direction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Cross-Discipline Comm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-jargon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Jargon & Acronyms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Expert Mental Models
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Expert Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-15-expert-mental-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 15 — Expert Mental Models
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-15-expert-mental-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 15 — Expert Mental Models
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="game-development-language-concepts-encyclopedia">GAME DEVELOPMENT LANGUAGE &amp; CONCEPTS ENCYCLOPEDIA</h1>
+<h2 id="chapter-15-expert-mental-models">Chapter 15 — Expert Mental Models</h2>
+<hr />
+<h1 id="the-core-mental-shift-what-expert-thinking-actually-is">The Core Mental Shift: What “Expert Thinking” Actually Is</h1>
+<p>At earlier stages, expertise is often assumed to mean:</p>
+<blockquote>
+<p>“Knowing more terms, tools, or techniques.”</p>
+</blockquote>
+<p>In professional game development, expert thinking is:</p>
+<blockquote>
+<p>The ability to model interconnected systems (technical, creative, psychological, and organizational) simultaneously and reason about their emergent behavior under constraint.</p>
+</blockquote>
+<p>A senior industry truth:</p>
+<blockquote>
+<p>“Experts don’t think in features — they think in systems under pressure.”</p>
+</blockquote>
+<hr />
+<h1 id="chapter-1-systems-thinking-the-foundation-of-expertise">Chapter 1: Systems Thinking (The Foundation of Expertise)</h1>
+<hr />
+<h2 id="systems-thinking">Systems Thinking</h2>
+<p>Understanding how components interact as a whole rather than in isolation.</p>
+<p>In games, everything is a system:</p>
+<ul>
+<li>Combat system</li>
+<li>Economy system</li>
+<li>AI system</li>
+<li>Animation system</li>
+<li>UX system</li>
+</ul>
+<hr />
+<h2 id="key-principle">Key Principle</h2>
+<blockquote>
+<p>Changing one system always affects others.</p>
+</blockquote>
+<p>Example:</p>
+<p>Buffing player damage affects:</p>
+<ul>
+<li>Enemy difficulty tuning</li>
+<li>Economy pacing</li>
+<li>Animation timing expectations</li>
+<li>Audio feedback intensity</li>
+<li>Player retention curves</li>
+</ul>
+<hr />
+<h2 id="feedback-loops">Feedback Loops</h2>
+<p>Circular cause-and-effect relationships.</p>
+<h3 id="positive-feedback-loop">Positive feedback loop</h3>
+<p>Amplifies behavior:</p>
+<ul>
+<li>Reward → more play → more rewards → more play</li>
+</ul>
+<hr />
+<h3 id="negative-feedback-loop">Negative feedback loop</h3>
+<p>Stabilizes behavior:</p>
+<ul>
+<li>Difficulty increases → player slows down → balance stabilizes</li>
+</ul>
+<hr />
+<h2 id="emergent-behavior">Emergent Behavior</h2>
+<p>Unexpected outcomes from simple rules interacting.</p>
+<p>Example:</p>
+<ul>
+<li>AI pathfinding + crowding = unpredictable combat behavior</li>
+</ul>
+<hr />
+<h1 id="chapter-2-player-psychology-modeling">Chapter 2: Player Psychology Modeling</h1>
+<hr />
+<h2 id="mental-model-of-the-player">Mental Model of the Player</h2>
+<p>Experts do not design for “users.”</p>
+<p>They design for:</p>
+<blockquote>
+<p>probabilistic human behavior under cognitive load</p>
+</blockquote>
+<hr />
+<h2 id="attention-allocation">Attention Allocation</h2>
+<p>Players cannot process everything at once.</p>
+<p>Designers must control:</p>
+<ul>
+<li>What players notice</li>
+<li>When they notice it</li>
+<li>Why they care</li>
+</ul>
+<hr />
+<h2 id="decision-pressure">Decision Pressure</h2>
+<p>Time-sensitive decision-making situations.</p>
+<p>Example:</p>
+<ul>
+<li>Combat under fire</li>
+<li>Resource scarcity</li>
+<li>PvP encounters</li>
+</ul>
+<hr />
+<h2 id="cognitive-bandwidth">Cognitive Bandwidth</h2>
+<p>Limited mental capacity for processing information.</p>
+<p>UX + combat design must respect this limit.</p>
+<hr />
+<h2 id="prediction-behavior">Prediction Behavior</h2>
+<p>Players constantly predict:</p>
+<ul>
+<li>Enemy actions</li>
+<li>System outcomes</li>
+<li>Reward timing</li>
+</ul>
+<p>Designers exploit or support this.</p>
+<hr />
+<h1 id="chapter-3-constraint-based-design-thinking">Chapter 3: Constraint-Based Design Thinking</h1>
+<hr />
+<h2 id="creative-constraints">Creative Constraints</h2>
+<p>Limitations that guide design quality:</p>
+<ul>
+<li>Engine limits</li>
+<li>Budget limits</li>
+<li>Time limits</li>
+<li>Platform limitations</li>
+</ul>
+<hr />
+<h2 id="constraint-as-design-tool">Constraint as Design Tool</h2>
+<p>Experts do not avoid constraints — they use them:</p>
+<blockquote>
+<p>“Constraints define the shape of creativity.”</p>
+</blockquote>
+<hr />
+<h2 id="scope-as-a-variable-not-a-constant">Scope as a Variable, Not a Constant</h2>
+<p>Beginner thinking:</p>
+<blockquote>
+<p>“Scope is fixed.”</p>
+</blockquote>
+<p>Expert thinking:</p>
+<blockquote>
+<p>“Scope is continuously negotiated based on risk and value.”</p>
+</blockquote>
+<hr />
+<h2 id="tradeoff-reasoning">Tradeoff Reasoning</h2>
+<p>Every decision has cost:</p>
+<ul>
+<li>Performance vs fidelity</li>
+<li>Complexity vs clarity</li>
+<li>Depth vs accessibility</li>
+</ul>
+<hr />
+<h1 id="chapter-4-emergent-design-thinking">Chapter 4: Emergent Design Thinking</h1>
+<hr />
+<h2 id="emergent-design">Emergent Design</h2>
+<p>Designing simple systems that create complex outcomes.</p>
+<hr />
+<h2 id="examples">Examples:</h2>
+<ul>
+<li>Physics + combat → emergent gameplay situations</li>
+<li>AI + environment → unpredictable encounters</li>
+<li>Loot systems → unexpected player economies</li>
+</ul>
+<hr />
+<h2 id="control-vs-emergence-spectrum">Control vs Emergence Spectrum</h2>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Emergence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scripted events</td>
+<td>Systemic behavior</td>
+</tr>
+<tr>
+<td>Predictable outcomes</td>
+<td>Unpredictable outcomes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="expert-goal">Expert Goal</h2>
+<blockquote>
+<p>Maximize meaningful emergence while maintaining design intent.</p>
+</blockquote>
+<hr />
+<h1 id="chapter-5-production-aware-thinking">Chapter 5: Production-Aware Thinking</h1>
+<hr />
+<h2 id="production-reality-awareness">Production Reality Awareness</h2>
+<p>Experts constantly evaluate:</p>
+<ul>
+<li>What is feasible in time</li>
+<li>What introduces risk</li>
+<li>What scales poorly</li>
+</ul>
+<hr />
+<h2 id="hidden-complexity-detection">Hidden Complexity Detection</h2>
+<p>Experts instinctively identify:</p>
+<ul>
+<li>Systems that will explode in complexity later</li>
+<li>“Simple” features that require large infrastructure</li>
+<li>Interdependencies that are not obvious</li>
+</ul>
+<hr />
+<h2 id="example">Example</h2>
+<p>“Add co-op mode” implies:</p>
+<ul>
+<li>Networking architecture</li>
+<li>Sync systems</li>
+<li>AI scaling</li>
+<li>UI redesign</li>
+<li>Performance doubling</li>
+</ul>
+<hr />
+<h1 id="chapter-6-technical-constraint-modeling">Chapter 6: Technical Constraint Modeling</h1>
+<hr />
+<h2 id="performance-budgeting">Performance Budgeting</h2>
+<p>Allocating CPU/GPU resources:</p>
+<ul>
+<li>AI: X ms</li>
+<li>Rendering: Y ms</li>
+<li>Physics: Z ms</li>
+</ul>
+<hr />
+<h2 id="deterministic-vs-non-deterministic-systems">Deterministic vs Non-Deterministic Systems</h2>
+<h3 id="deterministic">Deterministic</h3>
+<p>Same input → same output</p>
+<p>Used for:</p>
+<ul>
+<li>Replays</li>
+<li>Competitive multiplayer</li>
+</ul>
+<hr />
+<h3 id="non-deterministic">Non-deterministic</h3>
+<p>Variable output</p>
+<p>Used for:</p>
+<ul>
+<li>Animation variation</li>
+<li>Procedural systems</li>
+</ul>
+<hr />
+<h2 id="latency-modeling">Latency Modeling</h2>
+<p>Experts simulate:</p>
+<ul>
+<li>Input delay</li>
+<li>Network lag</li>
+<li>Frame timing variability</li>
+</ul>
+<hr />
+<h1 id="chapter-7-emotional-systems-modeling">Chapter 7: Emotional Systems Modeling</h1>
+<hr />
+<h2 id="emotional-arc-design">Emotional Arc Design</h2>
+<p>Structuring player emotion over time:</p>
+<ul>
+<li>Tension → release → escalation → payoff</li>
+</ul>
+<hr />
+<h2 id="pacing-design">Pacing Design</h2>
+<p>Controlling rhythm of gameplay:</p>
+<ul>
+<li>Combat intensity</li>
+<li>Exploration downtime</li>
+<li>Reward frequency</li>
+</ul>
+<hr />
+<h2 id="emotional-budgeting">Emotional Budgeting</h2>
+<p>Managing how often strong emotions are triggered.</p>
+<p>Too frequent → desensitization<br />
+Too rare → disengagement</p>
+<hr />
+<h1 id="chapter-8-multi-disciplinary-integration-thinking">Chapter 8: Multi-Disciplinary Integration Thinking</h1>
+<hr />
+<h2 id="unified-experience-model">Unified Experience Model</h2>
+<p>Experts think:</p>
+<blockquote>
+<p>“How do all systems collectively produce one coherent player experience?”</p>
+</blockquote>
+<hr />
+<h2 id="system-alignment">System Alignment</h2>
+<p>Ensuring:</p>
+<ul>
+<li>Mechanics support narrative</li>
+<li>Audio supports UX clarity</li>
+<li>Visuals support gameplay readability</li>
+<li>Economy supports engagement loop</li>
+</ul>
+<hr />
+<h2 id="cross-system-failure-detection">Cross-System Failure Detection</h2>
+<p>Example:</p>
+<ul>
+<li>UX says “player should feel powerful”</li>
+<li>Combat says “player is weak”</li>
+<li>Audio says “uncertain impact”</li>
+<li>Result: contradiction → confusion</li>
+</ul>
+<hr />
+<h1 id="chapter-9-decision-making-under-uncertainty">Chapter 9: Decision-Making Under Uncertainty</h1>
+<hr />
+<h2 id="probabilistic-thinking">Probabilistic Thinking</h2>
+<p>Nothing is certain:</p>
+<ul>
+<li>Player behavior varies</li>
+<li>Systems interact unpredictably</li>
+<li>Market response is unknown</li>
+</ul>
+<hr />
+<h2 id="risk-vs-reward-evaluation">Risk vs Reward Evaluation</h2>
+<p>Every feature evaluated by:</p>
+<ul>
+<li>Cost</li>
+<li>Impact</li>
+<li>Risk</li>
+<li>Dependency load</li>
+</ul>
+<hr />
+<h2 id="hypothesis-driven-development">Hypothesis-Driven Development</h2>
+<p>Experts treat features as hypotheses:</p>
+<blockquote>
+<p>“If we implement X, we expect Y behavior.”</p>
+</blockquote>
+<p>Then validate through playtesting/data.</p>
+<hr />
+<h1 id="chapter-10-expert-debugging-model">Chapter 10: Expert Debugging Model</h1>
+<hr />
+<h2 id="surface-level-debugging-beginner">Surface-Level Debugging (Beginner)</h2>
+<blockquote>
+<p>“What is broken?”</p>
+</blockquote>
+<hr />
+<h2 id="system-level-debugging-intermediate">System-Level Debugging (Intermediate)</h2>
+<blockquote>
+<p>“Which system caused the issue?”</p>
+</blockquote>
+<hr />
+<h2 id="root-cause-systemic-debugging-expert">Root-Cause Systemic Debugging (Expert)</h2>
+<blockquote>
+<p>“Which interaction between systems created this failure mode, and why was it not predicted?”</p>
+</blockquote>
+<hr />
+<h1 id="chapter-11-meta-design-thinking">Chapter 11: Meta-Design Thinking</h1>
+<hr />
+<h2 id="designing-the-designers-system">Designing the Designers’ System</h2>
+<p>Experts design:</p>
+<ul>
+<li>Tools</li>
+<li>Pipelines</li>
+<li>Workflows</li>
+</ul>
+<p>Not just gameplay.</p>
+<hr />
+<h2 id="tooling-as-force-multiplier">Tooling as Force Multiplier</h2>
+<p>Better tools → faster iteration → better game</p>
+<hr />
+<h2 id="example_1">Example:</h2>
+<ul>
+<li>Level editor quality directly affects level design quality</li>
+</ul>
+<hr />
+<h1 id="chapter-12-senior-mental-model-summary">Chapter 12: Senior Mental Model Summary</h1>
+<hr />
+<h2 id="beginner-thinking">Beginner Thinking</h2>
+<blockquote>
+<p>“How do I build this feature?”</p>
+</blockquote>
+<hr />
+<h2 id="intermediate-thinking">Intermediate Thinking</h2>
+<blockquote>
+<p>“How do I make this feature work well?”</p>
+</blockquote>
+<hr />
+<h2 id="senior-thinking">Senior Thinking</h2>
+<blockquote>
+<p>“How does this feature interact with every other system in the game?”</p>
+</blockquote>
+<hr />
+<h2 id="expert-thinking">Expert Thinking</h2>
+<blockquote>
+<p>“How do I design a stable, evolving, multi-system interactive ecosystem that produces predictable emotional outcomes under unpredictable human behavior?”</p>
+</blockquote>
+<hr />
+<h1 id="key-insight">Key Insight</h1>
+<p>In professional game development:</p>
+<blockquote>
+<p>Expertise is not knowledge accumulation — it is system-level perception across design, technology, production, and psychology simultaneously.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1364 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The canonical game development language and systems architecture reference.">
+      
+      
+      
+        <link rel="canonical" href="https://annias.github.io/spawn-dev-encyclopedia/06-audio/">
+      
+      
+        <link rel="prev" href="../05-programming/">
+      
+      
+        <link rel="next" href="../07-ux-ui/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>06. Audio Systems - Spawn Dev Encyclopedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#game-development-language-concepts-encyclopedia" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-header__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Spawn Dev Encyclopedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              06. Audio Systems
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-nav__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Spawn Dev Encyclopedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-game-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Game Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-level-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Level Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-art-visdev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Art & VisDev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Programming & Tech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Audio Systems
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Audio Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-audio-development-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 6 — Audio Development Vocabulary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-ux-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. UX & UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-production/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Production
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09. QA & Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-liveops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. LiveOps & Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Studio Economics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-creative-direction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Creative Direction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Cross-Discipline Comm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-jargon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Jargon & Acronyms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-mental-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Expert Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-audio-development-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 6 — Audio Development Vocabulary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="game-development-language-concepts-encyclopedia">GAME DEVELOPMENT LANGUAGE &amp; CONCEPTS ENCYCLOPEDIA</h1>
+<h2 id="chapter-6-audio-development-vocabulary">Chapter 6 — Audio Development Vocabulary</h2>
+<hr />
+<h1 id="the-core-mental-shift-what-audio-means-in-games">The Core Mental Shift: What “Audio” Means in Games</h1>
+<p>In games, audio is not decoration.</p>
+<p>It is:</p>
+<blockquote>
+<p>A real-time feedback, emotion, and information system that operates in parallel with visuals and gameplay mechanics.</p>
+</blockquote>
+<p>In professional terms:</p>
+<ul>
+<li>Visuals show what is happening</li>
+<li>Gameplay defines what is happening</li>
+<li>Audio tells you how it <em>feels</em> and often what to <em>pay attention to first</em></li>
+</ul>
+<p>A common AAA insight:</p>
+<blockquote>
+<p>“Players forgive visual confusion before they forgive audio confusion.”</p>
+</blockquote>
+<p>Because sound is often the fastest communication channel in games.</p>
+<hr />
+<h1 id="chapter-1-the-three-functions-of-game-audio">Chapter 1: The Three Functions of Game Audio</h1>
+<p>Every sound in a game typically serves at least one of three roles:</p>
+<hr />
+<h2 id="1-informational-audio">1. Informational Audio</h2>
+<p>Audio that communicates gameplay state.</p>
+<p>Examples:</p>
+<ul>
+<li>Low health warning</li>
+<li>Enemy nearby</li>
+<li>Objective complete</li>
+<li>Reload click</li>
+</ul>
+<p>This is often called:</p>
+<blockquote>
+<p><strong>Feedback audio</strong></p>
+</blockquote>
+<hr />
+<h2 id="2-emotional-audio">2. Emotional Audio</h2>
+<p>Audio that shapes mood.</p>
+<p>Examples:</p>
+<ul>
+<li>Ambient wind in horror games</li>
+<li>Orchestral tension buildup</li>
+<li>Peaceful environmental music</li>
+</ul>
+<p>This is often called:</p>
+<blockquote>
+<p><strong>Atmospheric audio</strong></p>
+</blockquote>
+<hr />
+<h2 id="3-mechanical-audio">3. Mechanical Audio</h2>
+<p>Audio tied directly to player actions.</p>
+<p>Examples:</p>
+<ul>
+<li>Footsteps</li>
+<li>Gunshots</li>
+<li>Jump sounds</li>
+<li>UI clicks</li>
+</ul>
+<p>This is often called:</p>
+<blockquote>
+<p><strong>Diegetic action feedback</strong></p>
+</blockquote>
+<hr />
+<h1 id="chapter-2-core-sound-design-vocabulary">Chapter 2: Core Sound Design Vocabulary</h1>
+<hr />
+<h2 id="sound-design">Sound Design</h2>
+<p>The creation and shaping of audio assets for gameplay and emotion.</p>
+<p>Not just recording sounds, but:</p>
+<ul>
+<li>Layering</li>
+<li>Processing</li>
+<li>Timing</li>
+<li>Contextual triggering</li>
+</ul>
+<hr />
+<h2 id="foley">Foley</h2>
+<p>Re-recording real-world actions in a studio.</p>
+<p>Examples:</p>
+<ul>
+<li>Footsteps</li>
+<li>Cloth movement</li>
+<li>Object handling</li>
+</ul>
+<p>Named after early film sound pioneer Jack Foley.</p>
+<hr />
+<h2 id="sfx-sound-effects">SFX (Sound Effects)</h2>
+<p>General term for non-music audio assets.</p>
+<p>Includes:</p>
+<ul>
+<li>Weapons</li>
+<li>UI sounds</li>
+<li>Impacts</li>
+<li>Environmental sounds</li>
+</ul>
+<hr />
+<h2 id="one-shot-sound">One-Shot Sound</h2>
+<p>A sound that plays fully once.</p>
+<p>Example:</p>
+<ul>
+<li>Gunshot</li>
+<li>Door slam</li>
+</ul>
+<hr />
+<h2 id="loop">Loop</h2>
+<p>A sound that repeats continuously.</p>
+<p>Example:</p>
+<ul>
+<li>Engine hum</li>
+<li>Wind ambience</li>
+</ul>
+<hr />
+<h2 id="layering">Layering</h2>
+<p>Combining multiple sounds into one composite sound.</p>
+<p>Example:</p>
+<p>A gunshot may include:</p>
+<ul>
+<li>Trigger click</li>
+<li>Explosion</li>
+<li>Mechanical echo</li>
+<li>Sub-bass impact</li>
+</ul>
+<hr />
+<h2 id="transient">Transient</h2>
+<p>The initial attack portion of a sound.</p>
+<p>Critical for:</p>
+<blockquote>
+<p>Perceived impact and responsiveness</p>
+</blockquote>
+<hr />
+<h2 id="tail">Tail</h2>
+<p>The decay portion of a sound.</p>
+<p>Example:</p>
+<ul>
+<li>Reverb</li>
+<li>Echo</li>
+<li>Fade-out</li>
+</ul>
+<hr />
+<h1 id="chapter-3-adaptive-interactive-audio">Chapter 3: Adaptive / Interactive Audio</h1>
+<hr />
+<h2 id="adaptive-audio">Adaptive Audio</h2>
+<p>Audio that changes dynamically based on game state.</p>
+<p>Example:</p>
+<ul>
+<li>Combat music intensifies when enemies appear</li>
+<li>Calm music returns when safe</li>
+</ul>
+<hr />
+<h2 id="interactive-music">Interactive Music</h2>
+<p>Music that responds to gameplay input or events.</p>
+<p>Example:</p>
+<ul>
+<li>Adding percussion during combat</li>
+<li>Removing layers during stealth</li>
+</ul>
+<hr />
+<h2 id="stingers">Stingers</h2>
+<p>Short musical cues triggered by events.</p>
+<p>Example:</p>
+<ul>
+<li>Enemy spotted</li>
+<li>Boss phase change</li>
+</ul>
+<hr />
+<h2 id="music-layering-system">Music Layering System</h2>
+<p>Music broken into layers:</p>
+<ul>
+<li>Base layer (ambient)</li>
+<li>Tension layer</li>
+<li>Combat layer</li>
+<li>Boss layer</li>
+</ul>
+<p>System dynamically mixes them.</p>
+<hr />
+<h2 id="vertical-re-orchestration">Vertical Re-Orchestration</h2>
+<p>Changing arrangement instead of just intensity.</p>
+<p>Example:</p>
+<p>Same melody, different instrumentation during combat.</p>
+<hr />
+<h2 id="horizontal-re-sequencing">Horizontal Re-Sequencing</h2>
+<p>Switching between different musical sections.</p>
+<p>Example:</p>
+<p>Exploration → combat → victory themes.</p>
+<hr />
+<h1 id="chapter-4-spatial-audio-vocabulary">Chapter 4: Spatial Audio Vocabulary</h1>
+<hr />
+<h2 id="spatial-audio">Spatial Audio</h2>
+<p>Audio positioned in 3D space relative to player.</p>
+<p>Enables:</p>
+<ul>
+<li>Directionality</li>
+<li>Distance perception</li>
+<li>Environmental realism</li>
+</ul>
+<hr />
+<h2 id="3d-audio-source">3D Audio Source</h2>
+<p>Sound emitted from a point in world space.</p>
+<p>Example:</p>
+<p>Enemy footsteps behind player.</p>
+<hr />
+<h2 id="attenuation">Attenuation</h2>
+<p>Reduction of volume over distance.</p>
+<hr />
+<h2 id="occlusion">Occlusion</h2>
+<p>Sound being blocked by objects.</p>
+<p>Example:</p>
+<p>Sound muffled behind a wall.</p>
+<hr />
+<h2 id="reverb">Reverb</h2>
+<p>Echo effect based on environment.</p>
+<p>Examples:</p>
+<ul>
+<li>Cave → long reverb</li>
+<li>Room → short reverb</li>
+<li>Outdoors → minimal reverb</li>
+</ul>
+<hr />
+<h2 id="hrtf-head-related-transfer-function">HRTF (Head-Related Transfer Function)</h2>
+<p>Mathematical model simulating how human ears perceive direction.</p>
+<p>Used in:</p>
+<ul>
+<li>VR audio</li>
+<li>3D headphone sound</li>
+</ul>
+<hr />
+<h1 id="chapter-5-audio-middleware-production-systems-layer">Chapter 5: Audio Middleware (Production Systems Layer)</h1>
+<hr />
+<h2 id="audio-middleware">Audio Middleware</h2>
+<p>External systems that manage game audio logic.</p>
+<p>Used because engines alone are often too limited.</p>
+<p>Common tools:</p>
+<ul>
+<li>FMOD</li>
+<li>Wwise</li>
+</ul>
+<hr />
+<h2 id="event-based-audio-system">Event-Based Audio System</h2>
+<p>Audio triggered by events rather than hardcoded calls.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>Player jumps → event triggers → sound system plays jump sound
+</code></pre></div>
+<p>This decouples audio from gameplay code.</p>
+<hr />
+<h2 id="audio-events">Audio Events</h2>
+<p>Named triggers for sound playback.</p>
+<p>Example:</p>
+<ul>
+<li>Play_Explosion_Large</li>
+<li>Play_UI_Click</li>
+<li>Play_Enemy_Spawn</li>
+</ul>
+<hr />
+<h2 id="parameter-based-audio">Parameter-Based Audio</h2>
+<p>Audio changes based on variables.</p>
+<p>Examples:</p>
+<ul>
+<li>Speed affects engine pitch</li>
+<li>Health affects heartbeat intensity</li>
+</ul>
+<hr />
+<h2 id="rtpc-real-time-parameter-control">RTPC (Real-Time Parameter Control)</h2>
+<p>Used in Wwise.</p>
+<p>Allows continuous audio modulation.</p>
+<p>Example:</p>
+<ul>
+<li>Danger level → music intensity</li>
+</ul>
+<hr />
+<h1 id="chapter-6-mixing-mastering-vocabulary">Chapter 6: Mixing &amp; Mastering Vocabulary</h1>
+<hr />
+<h2 id="mixing">Mixing</h2>
+<p>Balancing all audio elements together.</p>
+<p>Includes:</p>
+<ul>
+<li>Volume balance</li>
+<li>Frequency separation</li>
+<li>Spatial placement</li>
+</ul>
+<hr />
+<h2 id="mastering">Mastering</h2>
+<p>Final audio processing step.</p>
+<p>Ensures:</p>
+<ul>
+<li>Consistency</li>
+<li>Loudness standards</li>
+<li>Platform compliance</li>
+</ul>
+<hr />
+<h2 id="dynamic-range">Dynamic Range</h2>
+<p>Difference between quiet and loud sounds.</p>
+<hr />
+<h2 id="compression-audio">Compression (Audio)</h2>
+<p>Reducing dynamic range.</p>
+<p>Used to:</p>
+<ul>
+<li>Make sounds more consistent</li>
+<li>Improve clarity in gameplay</li>
+</ul>
+<hr />
+<h2 id="eq-equalization">EQ (Equalization)</h2>
+<p>Adjusting frequency balance.</p>
+<p>Example:</p>
+<ul>
+<li>Removing bass muddiness</li>
+<li>Enhancing clarity</li>
+</ul>
+<hr />
+<h2 id="loudness-normalization">Loudness Normalization</h2>
+<p>Ensuring consistent perceived volume.</p>
+<p>Important for:</p>
+<ul>
+<li>Consoles</li>
+<li>Streaming platforms</li>
+</ul>
+<hr />
+<h1 id="chapter-7-psychological-function-of-audio">Chapter 7: Psychological Function of Audio</h1>
+<hr />
+<h2 id="audio-feedback-loop">Audio Feedback Loop</h2>
+<p>Audio confirms player actions.</p>
+<p>Example:</p>
+<ul>
+<li>Shooting → gun sound → hit marker sound</li>
+</ul>
+<p>This reinforces:</p>
+<blockquote>
+<p>Agency and responsiveness</p>
+</blockquote>
+<hr />
+<h2 id="auditory-masking">Auditory Masking</h2>
+<p>When one sound hides another.</p>
+<p>Example:</p>
+<p>Explosion masking footsteps.</p>
+<hr />
+<h2 id="audio-hierarchy">Audio Hierarchy</h2>
+<p>Prioritizing important sounds.</p>
+<p>Example:</p>
+<ul>
+<li>Enemy attack &gt; ambient wind &gt; UI click</li>
+</ul>
+<hr />
+<h2 id="cognitive-load-reduction">Cognitive Load Reduction</h2>
+<p>Good audio reduces need for visual attention.</p>
+<p>Example:</p>
+<p>You hear enemy behind you before seeing them.</p>
+<hr />
+<h2 id="pavlovian-audio-design">Pavlovian Audio Design</h2>
+<p>Conditioned responses through repetition.</p>
+<p>Example:</p>
+<ul>
+<li>Loot sound = reward dopamine trigger</li>
+</ul>
+<p>Used heavily in:</p>
+<ul>
+<li>Loot games</li>
+<li>Live service games</li>
+</ul>
+<hr />
+<h1 id="chapter-8-genre-specific-audio-language">Chapter 8: Genre-Specific Audio Language</h1>
+<hr />
+<h2 id="fps-audio">FPS Audio</h2>
+<p>Focus:</p>
+<ul>
+<li>Positional accuracy</li>
+<li>Weapon clarity</li>
+<li>Tactical feedback</li>
+</ul>
+<p>Key terms:</p>
+<ul>
+<li>Footstep occlusion</li>
+<li>Weapon tail clarity</li>
+<li>Distance attenuation</li>
+</ul>
+<hr />
+<h2 id="horror-audio">Horror Audio</h2>
+<p>Focus:</p>
+<ul>
+<li>Ambiguity</li>
+<li>Unease</li>
+<li>Absence of sound</li>
+</ul>
+<p>Key concepts:</p>
+<ul>
+<li>Silence design</li>
+<li>Sub-bass tension</li>
+<li>Unresolved audio cues</li>
+</ul>
+<hr />
+<h2 id="rpg-audio">RPG Audio</h2>
+<p>Focus:</p>
+<ul>
+<li>Emotional atmosphere</li>
+<li>World immersion</li>
+<li>Long-form ambience</li>
+</ul>
+<hr />
+<h2 id="multiplayer-audio">Multiplayer Audio</h2>
+<p>Focus:</p>
+<ul>
+<li>Competitive clarity</li>
+<li>Fast recognition</li>
+<li>Priority sounds</li>
+</ul>
+<hr />
+<h2 id="mobile-audio">Mobile Audio</h2>
+<p>Focus:</p>
+<ul>
+<li>Compression</li>
+<li>Clarity on speakers</li>
+<li>Battery-friendly processing</li>
+</ul>
+<hr />
+<h1 id="chapter-9-technical-audio-systems">Chapter 9: Technical Audio Systems</h1>
+<hr />
+<h2 id="audio-engine">Audio Engine</h2>
+<p>System that processes and plays sound.</p>
+<hr />
+<h2 id="voice-limiting">Voice Limiting</h2>
+<p>Limiting number of simultaneous sounds.</p>
+<p>Prevents audio overload.</p>
+<hr />
+<h2 id="audio-pooling">Audio Pooling</h2>
+<p>Reusing audio instances for performance.</p>
+<hr />
+<h2 id="streaming-audio">Streaming Audio</h2>
+<p>Loading long sounds dynamically.</p>
+<p>Example:</p>
+<p>Music tracks, cutscenes.</p>
+<hr />
+<h2 id="sample-rate">Sample Rate</h2>
+<p>How many audio samples per second.</p>
+<p>Higher = better quality, more cost.</p>
+<hr />
+<h2 id="bit-depth">Bit Depth</h2>
+<p>Resolution of audio amplitude.</p>
+<p>Affects dynamic range quality.</p>
+<hr />
+<h1 id="chapter-10-audio-programming-concepts">Chapter 10: Audio Programming Concepts</h1>
+<hr />
+<h2 id="audio-thread">Audio Thread</h2>
+<p>Separate processing thread for sound.</p>
+<p>Prevents blocking gameplay loop.</p>
+<hr />
+<h2 id="latency">Latency</h2>
+<p>Delay between trigger and playback.</p>
+<p>Critical for responsiveness.</p>
+<hr />
+<h2 id="audio-tick">Audio Tick</h2>
+<p>Regular update cycle for audio system.</p>
+<hr />
+<h2 id="event-queue">Event Queue</h2>
+<p>System storing pending audio events.</p>
+<hr />
+<h1 id="chapter-11-cross-disciplinary-communication-audio-language">Chapter 11: Cross-Disciplinary Communication (Audio Language)</h1>
+<hr />
+<h2 id="designers-audio-team">Designers → Audio Team</h2>
+<p>Instead of:</p>
+<blockquote>
+<p>“Make it sound cool”</p>
+</blockquote>
+<p>They say:</p>
+<ul>
+<li>“This attack needs stronger telegraphing”</li>
+<li>“We need clearer hit confirmation”</li>
+<li>“This area should feel unsafe audibly”</li>
+</ul>
+<hr />
+<h2 id="programmers-audio-team">Programmers → Audio Team</h2>
+<p>Instead of:</p>
+<blockquote>
+<p>“Play sound here”</p>
+</blockquote>
+<p>They say:</p>
+<ul>
+<li>“Trigger event on state change”</li>
+<li>“Expose parameter for intensity scaling”</li>
+</ul>
+<hr />
+<h2 id="artists-audio-team">Artists → Audio Team</h2>
+<p>Instead of:</p>
+<blockquote>
+<p>“This should feel scary”</p>
+</blockquote>
+<p>They say:</p>
+<ul>
+<li>“We want low-frequency rumble here”</li>
+<li>“Space feels enclosed visually, audio should reinforce that”</li>
+</ul>
+<hr />
+<h2 id="audio-director-role">Audio Director Role</h2>
+<p>Responsible for:</p>
+<ul>
+<li>Overall sound identity</li>
+<li>Consistency across systems</li>
+<li>Emotional alignment</li>
+<li>Mixing standards</li>
+</ul>
+<p>Not just sound creation — sound strategy.</p>
+<hr />
+<h1 id="chapter-12-senior-level-audio-mental-model">Chapter 12: Senior-Level Audio Mental Model</h1>
+<p>Beginners think:</p>
+<blockquote>
+<p>“What sound should this object make?”</p>
+</blockquote>
+<p>Intermediate developers think:</p>
+<blockquote>
+<p>“How do I make this sound realistic?”</p>
+</blockquote>
+<p>Senior audio designers think:</p>
+<blockquote>
+<p>“What information, emotion, and feedback should this sound communicate within the player’s cognitive load?”</p>
+</blockquote>
+<p>Expert audio designers think:</p>
+<blockquote>
+<p>“How does sound shape player attention, reaction timing, emotional state, and perceived responsiveness in real time?”</p>
+</blockquote>
+<hr />
+<h1 id="key-insight">Key Insight</h1>
+<p>In high-level game development:</p>
+<blockquote>
+<p>Audio is not an effect. It is a communication channel faster than vision.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1227 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The canonical game development language and systems architecture reference.">
+      
+      
+      
+        <link rel="canonical" href="https://annias.github.io/spawn-dev-encyclopedia/09-qa/">
+      
+      
+        <link rel="prev" href="../08-production/">
+      
+      
+        <link rel="next" href="../10-liveops/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>09. QA & Testing - Spawn Dev Encyclopedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#game-development-language-concepts-encyclopedia" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-header__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Spawn Dev Encyclopedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              09. QA & Testing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-nav__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Spawn Dev Encyclopedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-game-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Game Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-level-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Level Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-art-visdev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Art & VisDev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Programming & Tech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Audio Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-ux-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. UX & UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-production/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Production
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09. QA & Testing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09. QA & Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-9-qa-testing-release-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 9 — QA, Testing &amp; Release Terminology
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-liveops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. LiveOps & Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Studio Economics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-creative-direction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Creative Direction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Cross-Discipline Comm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-jargon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Jargon & Acronyms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-mental-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Expert Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-9-qa-testing-release-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 9 — QA, Testing &amp; Release Terminology
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="game-development-language-concepts-encyclopedia">GAME DEVELOPMENT LANGUAGE &amp; CONCEPTS ENCYCLOPEDIA</h1>
+<h2 id="chapter-9-qa-testing-release-terminology">Chapter 9 — QA, Testing &amp; Release Terminology</h2>
+<hr />
+<h1 id="the-core-mental-shift-what-qa-actually-means">The Core Mental Shift: What QA Actually Means</h1>
+<p>QA (Quality Assurance) is often misunderstood as:</p>
+<blockquote>
+<p>“Finding bugs.”</p>
+</blockquote>
+<p>In professional game development, QA is:</p>
+<blockquote>
+<p>The systematic process of validating that a game is stable, consistent, reproducible, and compliant across all expected player behaviors and hardware environments.</p>
+</blockquote>
+<p>A key AAA insight:</p>
+<blockquote>
+<p>“A game is not finished when it works — it is finished when it cannot reasonably break.”</p>
+</blockquote>
+<p>QA is not a final phase. It is a continuous feedback system embedded into development.</p>
+<hr />
+<h1 id="chapter-1-qa-philosophy-in-game-development">Chapter 1: QA Philosophy in Game Development</h1>
+<hr />
+<h2 id="quality-assurance-qa">Quality Assurance (QA)</h2>
+<p>The discipline responsible for:</p>
+<ul>
+<li>Detecting defects</li>
+<li>Verifying fixes</li>
+<li>Ensuring stability</li>
+<li>Validating player experience consistency</li>
+</ul>
+<hr />
+<h2 id="quality-control-qc">Quality Control (QC)</h2>
+<p>Subset of QA focused on:</p>
+<ul>
+<li>Testing outputs</li>
+<li>Verifying correctness of builds</li>
+</ul>
+<hr />
+<h2 id="test-case">Test Case</h2>
+<p>A structured scenario used to validate functionality.</p>
+<p>Example:</p>
+<ul>
+<li>“Player dies in lava → respawn at checkpoint”</li>
+</ul>
+<hr />
+<h2 id="test-suite">Test Suite</h2>
+<p>Collection of test cases covering a system.</p>
+<hr />
+<h2 id="regression-testing">Regression Testing</h2>
+<p>Testing that previously fixed issues have not returned.</p>
+<hr />
+<h2 id="why-regression-testing-matters">Why regression testing matters</h2>
+<p>Games are highly interconnected systems.</p>
+<p>Fixing one issue often breaks another.</p>
+<hr />
+<h1 id="chapter-2-bug-classification-language">Chapter 2: Bug Classification Language</h1>
+<hr />
+<h2 id="bug">Bug</h2>
+<p>Any unintended behavior.</p>
+<hr />
+<h2 id="defect">Defect</h2>
+<p>Formal term used in production tracking systems.</p>
+<hr />
+<h2 id="issue">Issue</h2>
+<p>General umbrella term (bug, task, improvement).</p>
+<hr />
+<h2 id="repro-steps-reproduction-steps">Repro Steps (Reproduction Steps)</h2>
+<p>Exact steps to reliably trigger a bug.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>1. Start mission2. Equip weapon3. Enter combat4. Reload → crash occurs
+</code></pre></div>
+<hr />
+<h2 id="severity-vs-priority-critical-distinction">Severity vs Priority (Critical distinction)</h2>
+<h3 id="severity">Severity</h3>
+<p>How bad the bug is technically.</p>
+<h3 id="priority">Priority</h3>
+<p>How urgently it must be fixed.</p>
+<hr />
+<h2 id="severity-levels">Severity Levels</h2>
+<h3 id="s1-critical">S1 — Critical</h3>
+<ul>
+<li>Game crashes</li>
+<li>Save corruption</li>
+<li>Progress blocking</li>
+</ul>
+<hr />
+<h3 id="s2-major">S2 — Major</h3>
+<ul>
+<li>Gameplay broken but not blocking</li>
+</ul>
+<hr />
+<h3 id="s3-minor">S3 — Minor</h3>
+<ul>
+<li>Visual glitches</li>
+<li>UI issues</li>
+</ul>
+<hr />
+<h3 id="s4-cosmetic">S4 — Cosmetic</h3>
+<ul>
+<li>Slight animation or text issues</li>
+</ul>
+<hr />
+<h2 id="priority-levels">Priority Levels</h2>
+<h3 id="p0">P0</h3>
+<p>Fix immediately.</p>
+<h3 id="p1">P1</h3>
+<p>Fix soon.</p>
+<h3 id="p2">P2</h3>
+<p>Fix when possible.</p>
+<h3 id="p3">P3</h3>
+<p>Backlog.</p>
+<hr />
+<h2 id="edge-case">Edge Case</h2>
+<p>Rare or extreme scenario not typical in normal gameplay.</p>
+<p>Example:</p>
+<ul>
+<li>Player exploits physics to leave map bounds</li>
+</ul>
+<hr />
+<h2 id="corner-case">Corner Case</h2>
+<p>Very specific condition where multiple systems interact unexpectedly.</p>
+<hr />
+<h1 id="chapter-3-testing-methodologies">Chapter 3: Testing Methodologies</h1>
+<hr />
+<h2 id="playtesting">Playtesting</h2>
+<p>Observing real players interacting with the game.</p>
+<p>Focus:</p>
+<ul>
+<li>Confusion points</li>
+<li>Difficulty spikes</li>
+<li>Unintended behavior</li>
+</ul>
+<hr />
+<h2 id="internal-testing">Internal Testing</h2>
+<p>Developers testing their own systems.</p>
+<hr />
+<h2 id="external-testing">External Testing</h2>
+<p>Players outside the development team (often early access or focus groups).</p>
+<hr />
+<h2 id="smoke-testing">Smoke Testing</h2>
+<p>Quick validation that the build launches and core systems function.</p>
+<hr />
+<h2 id="stress-testing">Stress Testing</h2>
+<p>Pushing systems beyond expected limits.</p>
+<p>Example:</p>
+<ul>
+<li>Hundreds of enemies on screen</li>
+<li>Extreme network load</li>
+</ul>
+<hr />
+<h2 id="load-testing">Load Testing</h2>
+<p>Measuring performance under heavy usage conditions.</p>
+<hr />
+<h2 id="compatibility-testing">Compatibility Testing</h2>
+<p>Ensuring the game runs on different:</p>
+<ul>
+<li>Hardware</li>
+<li>Consoles</li>
+<li>Drivers</li>
+<li>Operating systems</li>
+</ul>
+<hr />
+<h1 id="chapter-4-build-and-release-language">Chapter 4: Build and Release Language</h1>
+<hr />
+<h2 id="build">Build</h2>
+<p>A compiled playable version of the game.</p>
+<hr />
+<h2 id="internal-build">Internal Build</h2>
+<p>Used by developers only.</p>
+<hr />
+<h2 id="external-build">External Build</h2>
+<p>Used by testers or players.</p>
+<hr />
+<h2 id="nightly-build">Nightly Build</h2>
+<p>Automated daily build from latest code.</p>
+<hr />
+<h2 id="candidate-build-rc">Candidate Build (RC)</h2>
+<p>Potential release version.</p>
+<hr />
+<h2 id="gold-master-gm">Gold Master (GM)</h2>
+<p>Final approved release build.</p>
+<hr />
+<h2 id="patch">Patch</h2>
+<p>Post-release update.</p>
+<hr />
+<h2 id="hotfix">Hotfix</h2>
+<p>Urgent patch for critical issues.</p>
+<hr />
+<h2 id="update-vs-patch">Update vs Patch</h2>
+<ul>
+<li>Patch = fixes</li>
+<li>Update = fixes + content changes</li>
+</ul>
+<hr />
+<h1 id="chapter-5-certification-platform-compliance">Chapter 5: Certification &amp; Platform Compliance</h1>
+<hr />
+<h2 id="certification">Certification</h2>
+<p>Approval process required by platform holders before release.</p>
+<p>Example platforms:</p>
+<ul>
+<li>PlayStation</li>
+<li>Xbox</li>
+<li>Nintendo</li>
+<li>Steam (less strict but still regulated)</li>
+</ul>
+<hr />
+<h2 id="trc-technical-requirement-checklist">TRC (Technical Requirement Checklist)</h2>
+<p>Platform-specific rules a game must follow.</p>
+<p>Example:</p>
+<ul>
+<li>No crashes during suspend/resume</li>
+<li>Proper save handling</li>
+</ul>
+<hr />
+<h2 id="compliance-testing">Compliance Testing</h2>
+<p>Ensuring game meets platform rules.</p>
+<hr />
+<h2 id="submission">Submission</h2>
+<p>Process of sending a build to platform for approval.</p>
+<hr />
+<h2 id="failure-in-certification">Failure in Certification</h2>
+<p>Common causes:</p>
+<ul>
+<li>Crash bugs</li>
+<li>Save corruption</li>
+<li>UI blocking input</li>
+<li>System violations</li>
+</ul>
+<hr />
+<h1 id="chapter-6-debugging-diagnostic-language">Chapter 6: Debugging &amp; Diagnostic Language</h1>
+<hr />
+<h2 id="crash">Crash</h2>
+<p>Game or application terminates unexpectedly.</p>
+<hr />
+<h2 id="freeze">Freeze</h2>
+<p>Game stops responding but does not crash.</p>
+<hr />
+<h2 id="hang">Hang</h2>
+<p>Similar to freeze; system stuck in infinite loop or blocked state.</p>
+<hr />
+<h2 id="null-reference-exception">Null Reference Exception</h2>
+<p>Trying to access non-existent object.</p>
+<hr />
+<h2 id="memory-leak">Memory Leak</h2>
+<p>Memory not released after use, causing performance degradation.</p>
+<hr />
+<h2 id="race-condition">Race Condition</h2>
+<p>Timing-dependent bug in concurrent systems.</p>
+<p>Example:</p>
+<p>Two systems updating same variable simultaneously.</p>
+<hr />
+<h2 id="desync">Desync</h2>
+<p>Multiplayer state mismatch between clients and server.</p>
+<hr />
+<h1 id="chapter-7-performance-qa-language">Chapter 7: Performance QA Language</h1>
+<hr />
+<h2 id="frame-drop">Frame Drop</h2>
+<p>Sudden decrease in FPS.</p>
+<hr />
+<h2 id="stutter">Stutter</h2>
+<p>Irregular frame pacing causing jitter.</p>
+<hr />
+<h2 id="hitching">Hitching</h2>
+<p>Brief freeze due to asset loading or CPU spikes.</p>
+<hr />
+<h2 id="frame-time-spike">Frame Time Spike</h2>
+<p>Sudden increase in time needed to render a frame.</p>
+<hr />
+<h2 id="bottleneck">Bottleneck</h2>
+<p>System limiting overall performance.</p>
+<hr />
+<h2 id="overhead">Overhead</h2>
+<p>Extra computational cost not directly tied to gameplay.</p>
+<hr />
+<h1 id="chapter-8-qa-workflow-systems">Chapter 8: QA Workflow Systems</h1>
+<hr />
+<h2 id="bug-database">Bug Database</h2>
+<p>Central system tracking all issues.</p>
+<p>Common tools:</p>
+<ul>
+<li>Jira</li>
+<li>Hansoft</li>
+<li>Trello (smaller teams)</li>
+</ul>
+<hr />
+<h2 id="ticket">Ticket</h2>
+<p>Individual bug or task entry.</p>
+<hr />
+<h2 id="status-flow">Status Flow</h2>
+<p>Typical states:</p>
+<div class="highlight"><pre><span></span><code>New → Assigned → In Progress → Fixed → Verified → Closed
+</code></pre></div>
+<hr />
+<h2 id="verification">Verification</h2>
+<p>QA confirms fix is correct.</p>
+<hr />
+<h2 id="reopen">Reopen</h2>
+<p>Bug returns after being marked fixed.</p>
+<hr />
+<h1 id="chapter-9-qa-metrics">Chapter 9: QA Metrics</h1>
+<hr />
+<h2 id="bug-density">Bug Density</h2>
+<p>Number of bugs per system or area.</p>
+<hr />
+<h2 id="escape-rate">Escape Rate</h2>
+<p>Bugs that reach players after release.</p>
+<hr />
+<h2 id="test-coverage">Test Coverage</h2>
+<p>Percentage of system tested.</p>
+<hr />
+<h2 id="stability-metrics">Stability Metrics</h2>
+<p>Crash rate, freeze rate, etc.</p>
+<hr />
+<h1 id="chapter-10-live-build-testing">Chapter 10: Live Build Testing</h1>
+<hr />
+<h2 id="build-verification-test-bvt">Build Verification Test (BVT)</h2>
+<p>Ensures build is stable enough for testing.</p>
+<hr />
+<h2 id="continuous-integration-testing">Continuous Integration Testing</h2>
+<p>Automated testing during development.</p>
+<hr />
+<h2 id="automated-testing">Automated Testing</h2>
+<p>Scripts simulate gameplay behavior.</p>
+<p>Used for:</p>
+<ul>
+<li>Regression checks</li>
+<li>Repeated validation</li>
+</ul>
+<hr />
+<h1 id="chapter-11-player-facing-qa-concepts">Chapter 11: Player-Facing QA Concepts</h1>
+<hr />
+<h2 id="ux-bug">UX Bug</h2>
+<p>Confusing or misleading experience, not a technical failure.</p>
+<p>Example:</p>
+<ul>
+<li>Players don’t understand UI icon meaning</li>
+</ul>
+<hr />
+<h2 id="gameplay-bug">Gameplay Bug</h2>
+<p>Mechanics not functioning as intended.</p>
+<hr />
+<h2 id="visual-bug">Visual Bug</h2>
+<p>Graphical issues.</p>
+<hr />
+<h2 id="audio-bug">Audio Bug</h2>
+<p>Missing or incorrect sound playback.</p>
+<hr />
+<h2 id="soft-lock">Soft Lock</h2>
+<p>Player cannot progress but game still runs.</p>
+<p>Example:</p>
+<p>Quest breaks leaving player stuck.</p>
+<hr />
+<h2 id="hard-lock">Hard Lock</h2>
+<p>Game becomes completely unresponsive.</p>
+<hr />
+<h1 id="chapter-12-senior-qa-mental-model">Chapter 12: Senior QA Mental Model</h1>
+<hr />
+<h2 id="beginner-thinking">Beginner Thinking</h2>
+<blockquote>
+<p>“Does the game have bugs?”</p>
+</blockquote>
+<hr />
+<h2 id="intermediate-thinking">Intermediate Thinking</h2>
+<blockquote>
+<p>“Where are the bugs and how do we fix them?”</p>
+</blockquote>
+<hr />
+<h2 id="senior-thinking">Senior Thinking</h2>
+<blockquote>
+<p>“What systemic patterns in design, architecture, or production are generating instability?”</p>
+</blockquote>
+<hr />
+<h2 id="expert-thinking">Expert Thinking</h2>
+<blockquote>
+<p>“How do we design systems that are inherently testable, observable, and resilient under unpredictable player behavior?”</p>
+</blockquote>
+<hr />
+<h1 id="key-insight">Key Insight</h1>
+<p>In professional studios:</p>
+<blockquote>
+<p>QA is not the end of development — it is the feedback system that keeps the entire development process grounded in reality.</p>
+</blockquote>
+<p>Without QA:</p>
+<ul>
+<li>Design assumptions fail</li>
+<li>Systems drift into instability</li>
+<li>Player experience becomes unpredictable</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

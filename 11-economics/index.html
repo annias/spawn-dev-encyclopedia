@@ -1,0 +1,1279 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The canonical game development language and systems architecture reference.">
+      
+      
+      
+        <link rel="canonical" href="https://annias.github.io/spawn-dev-encyclopedia/11-economics/">
+      
+      
+        <link rel="prev" href="../10-liveops/">
+      
+      
+        <link rel="next" href="../12-creative-direction/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>11. Studio Economics - Spawn Dev Encyclopedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#game-development-language-concepts-encyclopedia" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-header__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Spawn Dev Encyclopedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              11. Studio Economics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-nav__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Spawn Dev Encyclopedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-game-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Game Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-level-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Level Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-art-visdev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Art & VisDev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Programming & Tech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Audio Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-ux-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. UX & UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-production/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Production
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09. QA & Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-liveops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. LiveOps & Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Studio Economics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Studio Economics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-11-studio-structure-industry-economics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 11 — Studio Structure &amp; Industry Economics
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-creative-direction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Creative Direction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Cross-Discipline Comm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-jargon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Jargon & Acronyms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-mental-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Expert Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-11-studio-structure-industry-economics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 11 — Studio Structure &amp; Industry Economics
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="game-development-language-concepts-encyclopedia">GAME DEVELOPMENT LANGUAGE &amp; CONCEPTS ENCYCLOPEDIA</h1>
+<h2 id="chapter-11-studio-structure-industry-economics">Chapter 11 — Studio Structure &amp; Industry Economics</h2>
+<hr />
+<h1 id="the-core-mental-shift-what-the-industry-actually-is">The Core Mental Shift: What “The Industry” Actually Is</h1>
+<p>Beginners often think the game industry is:</p>
+<blockquote>
+<p>“People making games.”</p>
+</blockquote>
+<p>Professionally, it is:</p>
+<blockquote>
+<p>A multi-layered economic ecosystem of studios, publishers, investors, platform holders, outsourcing networks, and middleware providers coordinating risk, capital, production capacity, and market distribution.</p>
+</blockquote>
+<p>A key AAA truth:</p>
+<blockquote>
+<p>“Most game development decisions are not creative decisions — they are risk and capital allocation decisions.”</p>
+</blockquote>
+<hr />
+<h1 id="chapter-1-the-industry-ecosystem-map">Chapter 1: The Industry Ecosystem Map</h1>
+<p>At a high level, the industry is composed of:</p>
+<div class="highlight"><pre><span></span><code>Platform Holders    ↓Publishers    ↓Studios    ↓Co-Development / Outsourcing    ↓Middleware / Tooling Providers
+</code></pre></div>
+<p>Each layer has different incentives.</p>
+<hr />
+<h1 id="chapter-2-studio-types">Chapter 2: Studio Types</h1>
+<hr />
+<h2 id="indie-studio">Indie Studio</h2>
+<p>Definition:</p>
+<blockquote>
+<p>Small team, independent funding or self-funded development.</p>
+</blockquote>
+<p>Characteristics:</p>
+<ul>
+<li>High creative freedom</li>
+<li>Limited budget</li>
+<li>High risk tolerance</li>
+<li>Fast iteration</li>
+</ul>
+<p>Common tradeoff:</p>
+<blockquote>
+<p>Freedom vs stability</p>
+</blockquote>
+<hr />
+<h2 id="aa-studio">AA Studio</h2>
+<p>Definition:</p>
+<blockquote>
+<p>Mid-sized studio between indie and AAA.</p>
+</blockquote>
+<p>Characteristics:</p>
+<ul>
+<li>Moderate budgets</li>
+<li>Publisher relationships</li>
+<li>Hybrid creative/production structure</li>
+</ul>
+<hr />
+<h2 id="aaa-studio">AAA Studio</h2>
+<p>Definition:</p>
+<blockquote>
+<p>Large-scale production teams backed by major publishers.</p>
+</blockquote>
+<p>Characteristics:</p>
+<ul>
+<li>Hundreds to thousands of developers</li>
+<li>High production value</li>
+<li>Strong pipeline structure</li>
+<li>Heavy specialization</li>
+</ul>
+<p>Tradeoff:</p>
+<blockquote>
+<p>Scale vs agility</p>
+</blockquote>
+<hr />
+<h2 id="first-party-studio">First-Party Studio</h2>
+<p>Owned by platform holder.</p>
+<p>Examples:</p>
+<ul>
+<li>Sony Interactive Entertainment studios</li>
+<li>Xbox Game Studios</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Platform support</li>
+<li>Funding stability</li>
+</ul>
+<hr />
+<h2 id="third-party-studio">Third-Party Studio</h2>
+<p>Independent or publisher-funded studio.</p>
+<hr />
+<h2 id="live-service-studio">Live Service Studio</h2>
+<p>Focused on continuously operating games.</p>
+<p>Characteristics:</p>
+<ul>
+<li>Data-driven development</li>
+<li>Seasonal content pipelines</li>
+<li>Long-term monetization focus</li>
+</ul>
+<hr />
+<h1 id="chapter-3-publishers-critical-industry-layer">Chapter 3: Publishers (Critical Industry Layer)</h1>
+<hr />
+<h2 id="publisher">Publisher</h2>
+<p>Entity responsible for:</p>
+<ul>
+<li>Funding development</li>
+<li>Marketing</li>
+<li>Distribution</li>
+<li>Platform relationships</li>
+<li>Risk absorption</li>
+</ul>
+<hr />
+<h2 id="publishing-agreement">Publishing Agreement</h2>
+<p>Contract between studio and publisher defining:</p>
+<ul>
+<li>Budget</li>
+<li>Revenue share</li>
+<li>Milestones</li>
+<li>IP ownership</li>
+</ul>
+<hr />
+<h2 id="ip-intellectual-property">IP (Intellectual Property)</h2>
+<p>Ownership of game world/brand.</p>
+<p>Example:</p>
+<ul>
+<li>Who owns the franchise?</li>
+</ul>
+<hr />
+<h2 id="royalty">Royalty</h2>
+<p>Percentage of revenue paid to studio or publisher.</p>
+<hr />
+<h2 id="recoupment">Recoupment</h2>
+<p>Publisher recovers investment before profit sharing begins.</p>
+<hr />
+<h1 id="chapter-4-funding-models">Chapter 4: Funding Models</h1>
+<hr />
+<h2 id="self-funded">Self-Funded</h2>
+<p>Studio finances development independently.</p>
+<p>Risk:</p>
+<ul>
+<li>High financial exposure</li>
+</ul>
+<hr />
+<h2 id="publisher-funded">Publisher-Funded</h2>
+<p>Publisher finances production.</p>
+<p>Tradeoff:</p>
+<ul>
+<li>Less creative control</li>
+</ul>
+<hr />
+<h2 id="venture-capital-vc">Venture Capital (VC)</h2>
+<p>Investment from funds expecting growth and return.</p>
+<p>Common in:</p>
+<ul>
+<li>Mobile</li>
+<li>Live service startups</li>
+</ul>
+<hr />
+<h2 id="early-access-funding">Early Access Funding</h2>
+<p>Players fund development via early access purchases.</p>
+<hr />
+<h1 id="chapter-5-outsourcing-co-development">Chapter 5: Outsourcing &amp; Co-Development</h1>
+<hr />
+<h2 id="outsourcing">Outsourcing</h2>
+<p>External teams produce specific assets or systems.</p>
+<p>Examples:</p>
+<ul>
+<li>Art production</li>
+<li>Animation</li>
+<li>QA testing</li>
+</ul>
+<hr />
+<h2 id="co-development">Co-Development</h2>
+<p>External studio contributes directly to core game development.</p>
+<p>More integrated than outsourcing.</p>
+<hr />
+<h2 id="vendor">Vendor</h2>
+<p>External service provider.</p>
+<p>Examples:</p>
+<ul>
+<li>Motion capture studios</li>
+<li>Audio studios</li>
+</ul>
+<hr />
+<h2 id="pipeline-fragmentation">Pipeline Fragmentation</h2>
+<p>When work is split across multiple companies.</p>
+<p>Risk:</p>
+<ul>
+<li>Communication loss</li>
+<li>Inconsistent quality</li>
+</ul>
+<hr />
+<h1 id="chapter-6-middleware-tooling-ecosystem">Chapter 6: Middleware &amp; Tooling Ecosystem</h1>
+<hr />
+<h2 id="middleware">Middleware</h2>
+<p>External software integrated into game engine.</p>
+<p>Examples:</p>
+<ul>
+<li>Physics engines</li>
+<li>Audio systems (FMOD, Wwise)</li>
+<li>Networking libraries</li>
+</ul>
+<hr />
+<h2 id="engine-licensing">Engine Licensing</h2>
+<p>Using third-party engine:</p>
+<ul>
+<li>Unreal Engine</li>
+<li>Unity</li>
+</ul>
+<p>Tradeoff:</p>
+<ul>
+<li>Speed vs control</li>
+</ul>
+<hr />
+<h2 id="proprietary-engine">Proprietary Engine</h2>
+<p>Studio-built engine.</p>
+<p>Advantages:</p>
+<ul>
+<li>Full control</li>
+<li>Optimization freedom</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>High maintenance cost</li>
+</ul>
+<hr />
+<h1 id="chapter-7-production-capital-flow">Chapter 7: Production Capital Flow</h1>
+<hr />
+<h2 id="budget">Budget</h2>
+<p>Total funding allocated to project.</p>
+<hr />
+<h2 id="burn-rate">Burn Rate</h2>
+<p>How quickly money is spent monthly.</p>
+<hr />
+<h2 id="headcount-scaling">Headcount Scaling</h2>
+<p>Increasing team size over time.</p>
+<p>Important insight:</p>
+<blockquote>
+<p>More people does not always mean faster development.</p>
+</blockquote>
+<hr />
+<h2 id="productivity-curve">Productivity Curve</h2>
+<p>Non-linear relationship between team size and output.</p>
+<p>Large teams introduce:</p>
+<ul>
+<li>Communication overhead</li>
+<li>Coordination complexity</li>
+</ul>
+<hr />
+<h1 id="chapter-8-risk-economics-in-game-development">Chapter 8: Risk Economics in Game Development</h1>
+<hr />
+<h2 id="development-risk">Development Risk</h2>
+<p>Game may not be fun or viable.</p>
+<hr />
+<h2 id="technical-risk">Technical Risk</h2>
+<p>Engine or systems may not support design goals.</p>
+<hr />
+<h2 id="market-risk">Market Risk</h2>
+<p>Game may not succeed commercially.</p>
+<hr />
+<h2 id="production-risk">Production Risk</h2>
+<p>Game may not ship on time.</p>
+<hr />
+<h2 id="risk-mitigation-strategy">Risk Mitigation Strategy</h2>
+<p>Examples:</p>
+<ul>
+<li>Prototyping</li>
+<li>Vertical slices</li>
+<li>Scope reduction</li>
+<li>Parallel development</li>
+</ul>
+<hr />
+<h1 id="chapter-9-platform-holders">Chapter 9: Platform Holders</h1>
+<hr />
+<h2 id="platform-holder">Platform Holder</h2>
+<p>Company controlling distribution platforms.</p>
+<p>Examples:</p>
+<ul>
+<li>Sony</li>
+<li>Microsoft</li>
+<li>Nintendo</li>
+<li>Valve</li>
+</ul>
+<hr />
+<h2 id="platform-fee">Platform Fee</h2>
+<p>Revenue share taken by platform holder.</p>
+<p>Commonly:</p>
+<ul>
+<li>30% standard cut (varies by platform)</li>
+</ul>
+<hr />
+<h2 id="certification-gatekeeping">Certification Gatekeeping</h2>
+<p>Platforms enforce quality and compliance standards before release.</p>
+<hr />
+<h1 id="chapter-10-market-positioning-language">Chapter 10: Market Positioning Language</h1>
+<hr />
+<h2 id="genre-positioning">Genre Positioning</h2>
+<p>How a game is categorized:</p>
+<ul>
+<li>FPS</li>
+<li>RPG</li>
+<li>Strategy</li>
+<li>Simulation</li>
+</ul>
+<hr />
+<h2 id="market-segment">Market Segment</h2>
+<p>Target audience group:</p>
+<ul>
+<li>Hardcore gamers</li>
+<li>Casual players</li>
+<li>Mobile users</li>
+</ul>
+<hr />
+<h2 id="differentiation">Differentiation</h2>
+<p>What makes a game unique in the market.</p>
+<hr />
+<h2 id="competitive-landscape">Competitive Landscape</h2>
+<p>Other games competing for same audience.</p>
+<hr />
+<h2 id="benchmarks">Benchmarks</h2>
+<p>Reference games used for comparison.</p>
+<p>Example:</p>
+<blockquote>
+<p>“We are targeting Destiny-level engagement.”</p>
+</blockquote>
+<hr />
+<h1 id="chapter-11-industry-strategy-language">Chapter 11: Industry Strategy Language</h1>
+<hr />
+<h2 id="live-service-strategy">Live Service Strategy</h2>
+<p>Long-term engagement model.</p>
+<hr />
+<h2 id="premium-strategy">Premium Strategy</h2>
+<p>One-time purchase focus.</p>
+<hr />
+<h2 id="franchise-strategy">Franchise Strategy</h2>
+<p>Building long-term intellectual property.</p>
+<hr />
+<h2 id="portfolio-strategy">Portfolio Strategy</h2>
+<p>Publisher balancing multiple games.</p>
+<hr />
+<h2 id="risk-diversification">Risk Diversification</h2>
+<p>Spreading investment across multiple projects.</p>
+<hr />
+<h1 id="chapter-12-executive-level-language">Chapter 12: Executive-Level Language</h1>
+<hr />
+<h2 id="roi-return-on-investment">ROI (Return on Investment)</h2>
+<p>Profit relative to cost.</p>
+<hr />
+<h2 id="pl-profit-and-loss">P&amp;L (Profit and Loss)</h2>
+<p>Financial performance statement.</p>
+<hr />
+<h2 id="ebitda">EBITDA</h2>
+<p>Financial performance metric excluding certain costs.</p>
+<hr />
+<h2 id="forecasting">Forecasting</h2>
+<p>Predicting future revenue and performance.</p>
+<hr />
+<h2 id="greenlight">Greenlight</h2>
+<p>Approval to begin full production.</p>
+<hr />
+<h2 id="cancellation">Cancellation</h2>
+<p>Stopping development due to risk or failure.</p>
+<hr />
+<h1 id="chapter-13-studio-communication-hierarchy">Chapter 13: Studio Communication Hierarchy</h1>
+<hr />
+<h2 id="developer-level">Developer Level</h2>
+<p>Focus:</p>
+<ul>
+<li>Systems</li>
+<li>Features</li>
+<li>Tasks</li>
+</ul>
+<hr />
+<h2 id="lead-level">Lead Level</h2>
+<p>Focus:</p>
+<ul>
+<li>Team coordination</li>
+<li>Quality standards</li>
+</ul>
+<hr />
+<h2 id="director-level">Director Level</h2>
+<p>Focus:</p>
+<ul>
+<li>Vision alignment</li>
+<li>Cross-discipline decisions</li>
+</ul>
+<hr />
+<h2 id="executive-level">Executive Level</h2>
+<p>Focus:</p>
+<ul>
+<li>Financial performance</li>
+<li>Strategic direction</li>
+<li>Portfolio management</li>
+</ul>
+<hr />
+<h1 id="chapter-14-industry-reality-principles">Chapter 14: Industry Reality Principles</h1>
+<hr />
+<h2 id="principle-1-creativity-is-constrained-by-capital">Principle 1: Creativity is constrained by capital</h2>
+<p>More funding → more scope<br />
+But also more oversight</p>
+<hr />
+<h2 id="principle-2-time-is-the-most-expensive-resource">Principle 2: Time is the most expensive resource</h2>
+<p>Delays cost more than features.</p>
+<hr />
+<h2 id="principle-3-communication-overhead-scales-non-linearly">Principle 3: Communication overhead scales non-linearly</h2>
+<p>More people = more complexity.</p>
+<hr />
+<h2 id="principle-4-risk-is-always-being-redistributed">Principle 4: Risk is always being redistributed</h2>
+<p>Every decision shifts risk somewhere:</p>
+<ul>
+<li>To production</li>
+<li>To technology</li>
+<li>To market</li>
+</ul>
+<hr />
+<h1 id="chapter-15-senior-industry-mental-model">Chapter 15: Senior Industry Mental Model</h1>
+<hr />
+<h2 id="beginner-thinking">Beginner Thinking</h2>
+<blockquote>
+<p>“What game should we make?”</p>
+</blockquote>
+<hr />
+<h2 id="intermediate-thinking">Intermediate Thinking</h2>
+<blockquote>
+<p>“How do we fund and build this game?”</p>
+</blockquote>
+<hr />
+<h2 id="senior-thinking">Senior Thinking</h2>
+<blockquote>
+<p>“How do we structure creative, technical, and financial risk so that the project remains viable from concept to launch?”</p>
+</blockquote>
+<hr />
+<h2 id="expert-thinking">Expert Thinking</h2>
+<blockquote>
+<p>“How do we align incentives across developers, publishers, platforms, and players so that creative output, financial sustainability, and production reality converge into a shippable system?”</p>
+</blockquote>
+<hr />
+<h1 id="key-insight">Key Insight</h1>
+<p>In professional game development:</p>
+<blockquote>
+<p>Studios do not simply make games — they operate within a network of financial, technical, and organizational constraints that shape what games are even possible.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

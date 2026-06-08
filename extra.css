@@ -1,0 +1,16 @@
+/* Fix transparent mindmap nodes in Material Slate theme */
+.mermaid .mindmap-node rect,
+.mermaid .mindmap-node circle,
+.mermaid .mindmap-node path,
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node polygon,
+.mermaid .node path {
+  fill: #2a2c3c !important; /* Solid background matching Slate theme cards */
+}
+
+/* Ensure node labels are centered and have proper contrast */
+.mermaid .mindmap-node text,
+.mermaid .node text {
+  fill: #ffffff !important;
+}

@@ -1,0 +1,1570 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The canonical game development language and systems architecture reference.">
+      
+      
+      
+        <link rel="canonical" href="https://annias.github.io/spawn-dev-encyclopedia/03-level-design/">
+      
+      
+        <link rel="prev" href="../02-game-design/">
+      
+      
+        <link rel="next" href="../04-art-visdev/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>03. Level Design - Spawn Dev Encyclopedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-3-level-design-encyclopedia" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-header__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Spawn Dev Encyclopedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              03. Level Design
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-nav__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Spawn Dev Encyclopedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-game-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Game Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Level Design
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Level Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#thinking-like-a-professional-level-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking Like a Professional Level Designer
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-art-visdev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Art & VisDev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Programming & Tech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Audio Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-ux-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. UX & UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-production/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Production
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09. QA & Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-liveops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. LiveOps & Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Studio Economics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-creative-direction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Creative Direction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Cross-Discipline Comm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-jargon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Jargon & Acronyms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-mental-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Expert Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#thinking-like-a-professional-level-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking Like a Professional Level Designer
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-3-level-design-encyclopedia">Chapter 3 — Level Design Encyclopedia</h1>
+<h2 id="thinking-like-a-professional-level-designer">Thinking Like a Professional Level Designer</h2>
+<p>One of the biggest misconceptions among new developers is that level design is about <strong>building environments</strong>.</p>
+<p>It isn't.</p>
+<p>Environment art builds environments.</p>
+<p>Level design creates <strong>player experiences through space.</strong></p>
+<p>A professional level designer is fundamentally a behavioral architect.</p>
+<p>Their job is not:</p>
+<blockquote>
+<p>"Create a cool map."</p>
+</blockquote>
+<p>Their job is:</p>
+<blockquote>
+<p>"Create a sequence of decisions, emotions, challenges, discoveries, and behaviors that occur through interaction with space."</p>
+</blockquote>
+<p>Senior level designers rarely think in terms of walls, doors, corridors, and props.</p>
+<p>They think in terms of:</p>
+<ul>
+<li>Information</li>
+<li>Attention</li>
+<li>Movement</li>
+<li>Pressure</li>
+<li>Choice</li>
+<li>Risk</li>
+<li>Reward</li>
+<li>Pacing</li>
+<li>Psychology</li>
+</ul>
+<p>The map itself is merely the medium.</p>
+<hr />
+<h1 id="the-fundamental-equation-of-level-design">The Fundamental Equation of Level Design</h1>
+<p>Professional level designers often operate from an implicit model:</p>
+<div class="highlight"><pre><span></span><code>Space+Rules+Information+Player Ability=Player Behavior
+</code></pre></div>
+<p>Everything in level design ultimately serves one purpose:</p>
+<blockquote>
+<p>Shaping player behavior.</p>
+</blockquote>
+<hr />
+<h1 id="chapter-1-the-three-layers-of-a-level">Chapter 1: The Three Layers of a Level</h1>
+<p>Every level exists simultaneously on three layers.</p>
+<h2 id="physical-layer">Physical Layer</h2>
+<p>The literal geometry.</p>
+<p>Examples:</p>
+<ul>
+<li>Walls</li>
+<li>Platforms</li>
+<li>Buildings</li>
+<li>Terrain</li>
+<li>Cover objects</li>
+</ul>
+<p>This is what beginners focus on.</p>
+<hr />
+<h2 id="functional-layer">Functional Layer</h2>
+<p>The gameplay purpose.</p>
+<p>Examples:</p>
+<ul>
+<li>Combat space</li>
+<li>Exploration space</li>
+<li>Puzzle space</li>
+<li>Social space</li>
+</ul>
+<p>Professionals spend most of their time here.</p>
+<hr />
+<h2 id="experiential-layer">Experiential Layer</h2>
+<p>The emotional outcome.</p>
+<p>Examples:</p>
+<ul>
+<li>Tension</li>
+<li>Curiosity</li>
+<li>Relief</li>
+<li>Wonder</li>
+<li>Fear</li>
+</ul>
+<p>Elite level designers start here.</p>
+<p>They ask:</p>
+<blockquote>
+<p>What should the player feel?</p>
+</blockquote>
+<p>Then build backwards.</p>
+<hr />
+<h1 id="chapter-2-flow">Chapter 2: Flow</h1>
+<p>Flow is one of the most important concepts in level design.</p>
+<p>Definition:</p>
+<blockquote>
+<p>The smooth progression of player attention, movement, and decision-making through a space.</p>
+</blockquote>
+<hr />
+<h2 id="good-flow">Good Flow</h2>
+<p>Player naturally understands:</p>
+<ul>
+<li>Where they are</li>
+<li>Where they came from</li>
+<li>Where they're going</li>
+<li>What they're doing</li>
+</ul>
+<p>Without needing explicit instruction.</p>
+<hr />
+<h2 id="bad-flow">Bad Flow</h2>
+<p>Player experiences:</p>
+<ul>
+<li>Confusion</li>
+<li>Backtracking</li>
+<li>Frustration</li>
+<li>Getting lost</li>
+</ul>
+<hr />
+<h2 id="common-misconception">Common Misconception</h2>
+<p>Beginners think flow means:</p>
+<blockquote>
+<p>Moving quickly.</p>
+</blockquote>
+<p>Not true.</p>
+<p>A horror game may deliberately slow movement.</p>
+<p>Flow means:</p>
+<blockquote>
+<p>Appropriate movement for intended experience.</p>
+</blockquote>
+<hr />
+<h2 id="types-of-flow">Types of Flow</h2>
+<h3 id="linear-flow">Linear Flow</h3>
+<p>One primary route.</p>
+<p>Examples:</p>
+<ul>
+<li>Half-Life</li>
+<li>Uncharted</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Tight pacing</li>
+<li>Strong narrative control</li>
+</ul>
+<hr />
+<h3 id="branching-flow">Branching Flow</h3>
+<p>Multiple routes.</p>
+<p>Examples:</p>
+<ul>
+<li>Dishonored</li>
+<li>Deus Ex</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Agency</li>
+<li>Replayability</li>
+</ul>
+<hr />
+<h3 id="hub-and-spoke">Hub-and-Spoke</h3>
+<p>Central hub connected to regions.</p>
+<p>Examples:</p>
+<ul>
+<li>Dark Souls</li>
+<li>Metroid Prime</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Structured exploration</li>
+</ul>
+<hr />
+<h3 id="open-flow">Open Flow</h3>
+<p>Player creates their own route.</p>
+<p>Examples:</p>
+<ul>
+<li>Minecraft</li>
+<li>Breath of the Wild</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Emergence</li>
+<li>Freedom</li>
+</ul>
+<p>Challenge:</p>
+<ul>
+<li>Harder pacing control</li>
+</ul>
+<hr />
+<h1 id="chapter-3-spatial-design">Chapter 3: Spatial Design</h1>
+<p>Spatial design is the discipline of controlling experience through geometry.</p>
+<hr />
+<h2 id="macro-space">Macro Space</h2>
+<p>Large-scale layout.</p>
+<p>Questions:</p>
+<ul>
+<li>How regions connect</li>
+<li>Major pathways</li>
+<li>World structure</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Open world regions</li>
+<li>Dungeon structure</li>
+<li>Multiplayer map layout</li>
+</ul>
+<hr />
+<h2 id="meso-space">Meso Space</h2>
+<p>Intermediate structures.</p>
+<p>Examples:</p>
+<ul>
+<li>Buildings</li>
+<li>Encounter zones</li>
+<li>Districts</li>
+</ul>
+<hr />
+<h2 id="micro-space">Micro Space</h2>
+<p>Moment-to-moment interaction areas.</p>
+<p>Examples:</p>
+<ul>
+<li>Cover placements</li>
+<li>Platform jumps</li>
+<li>Loot locations</li>
+</ul>
+<p>Many junior designers focus only on micro-space.</p>
+<p>Senior designers work across all three scales simultaneously.</p>
+<hr />
+<h1 id="chapter-4-affordances">Chapter 4: Affordances</h1>
+<p>One of the most important design concepts in existence.</p>
+<p>Affordance:</p>
+<blockquote>
+<p>What an object suggests can be done with it.</p>
+</blockquote>
+<p>Examples:</p>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Affordance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ladder</td>
+<td>Climb</td>
+</tr>
+<tr>
+<td>Door</td>
+<td>Open</td>
+</tr>
+<tr>
+<td>Lever</td>
+<td>Pull</td>
+</tr>
+<tr>
+<td>Cover wall</td>
+<td>Hide</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="why-affordances-matter">Why Affordances Matter</h2>
+<p>Players rarely read instructions.</p>
+<p>They interpret environments.</p>
+<p>Good affordances reduce tutorial requirements.</p>
+<hr />
+<h2 id="false-affordance">False Affordance</h2>
+<p>Suggesting interaction that does not exist.</p>
+<p>Example:</p>
+<p>Detailed door that cannot open.</p>
+<p>Players hate this.</p>
+<hr />
+<h2 id="hidden-affordance">Hidden Affordance</h2>
+<p>Interaction exists but isn't communicated.</p>
+<p>Example:</p>
+<p>Climbable wall with no visual cues.</p>
+<p>Players miss it.</p>
+<hr />
+<h1 id="signifiers">Signifiers</h1>
+<p>Often confused with affordances.</p>
+<p>Affordance:</p>
+<blockquote>
+<p>Possible action.</p>
+</blockquote>
+<p>Signifier:</p>
+<blockquote>
+<p>Information communicating affordance.</p>
+</blockquote>
+<p>Example:</p>
+<p>Yellow paint in modern games.</p>
+<p>The paint isn't the affordance.</p>
+<p>The climbable ledge is.</p>
+<p>The paint is the signifier.</p>
+<hr />
+<h1 id="chapter-5-sightlines">Chapter 5: Sightlines</h1>
+<p>Sightlines are critical.</p>
+<p>Definition:</p>
+<blockquote>
+<p>What players can see from a given position.</p>
+</blockquote>
+<p>Professional level designers obsess over sightlines.</p>
+<hr />
+<h2 id="long-sightlines">Long Sightlines</h2>
+<p>Allow:</p>
+<ul>
+<li>Reconnaissance</li>
+<li>Sniping</li>
+<li>Anticipation</li>
+</ul>
+<p>Common in:</p>
+<ul>
+<li>Battlefield</li>
+<li>ARMA</li>
+</ul>
+<hr />
+<h2 id="short-sightlines">Short Sightlines</h2>
+<p>Create:</p>
+<ul>
+<li>Ambushes</li>
+<li>Tension</li>
+<li>Surprise</li>
+</ul>
+<p>Common in:</p>
+<ul>
+<li>Horror games</li>
+<li>Close-quarters shooters</li>
+</ul>
+<hr />
+<h2 id="information-sightlines">Information Sightlines</h2>
+<p>Used for navigation.</p>
+<p>Player sees:</p>
+<ul>
+<li>Landmark</li>
+<li>Objective</li>
+<li>Exit</li>
+</ul>
+<p>before reaching it.</p>
+<p>This creates orientation.</p>
+<hr />
+<h1 id="chapter-6-landmarking">Chapter 6: Landmarking</h1>
+<p>Humans navigate using landmarks.</p>
+<p>Players do too.</p>
+<hr />
+<h2 id="landmark">Landmark</h2>
+<p>A unique environmental feature used for orientation.</p>
+<p>Examples:</p>
+<ul>
+<li>Castle</li>
+<li>Tower</li>
+<li>Statue</li>
+<li>Mountain</li>
+</ul>
+<hr />
+<h2 id="strong-landmark-characteristics">Strong Landmark Characteristics</h2>
+<p>Must be:</p>
+<h3 id="visible">Visible</h3>
+<p>Seen from multiple locations.</p>
+<h3 id="distinct">Distinct</h3>
+<p>Unique silhouette.</p>
+<h3 id="memorable">Memorable</h3>
+<p>Psychologically sticky.</p>
+<hr />
+<h2 id="weak-landmark">Weak Landmark</h2>
+<p>Everything looks similar.</p>
+<p>Players get lost.</p>
+<p>This is a common issue in procedural environments.</p>
+<hr />
+<h1 id="chapter-7-wayfinding">Chapter 7: Wayfinding</h1>
+<p>Wayfinding is:</p>
+<blockquote>
+<p>Helping players navigate without explicit instructions.</p>
+</blockquote>
+<p>Elite designers guide players invisibly.</p>
+<hr />
+<h2 id="techniques">Techniques</h2>
+<h3 id="lighting">Lighting</h3>
+<p>Bright areas attract attention.</p>
+<hr />
+<h3 id="color">Color</h3>
+<p>Contrast attracts attention.</p>
+<hr />
+<h3 id="motion">Motion</h3>
+<p>Movement naturally draws the eye.</p>
+<hr />
+<h3 id="framing">Framing</h3>
+<p>Architecture can point toward objectives.</p>
+<hr />
+<h3 id="leading-lines">Leading Lines</h3>
+<p>Roads.</p>
+<p>Pipes.</p>
+<p>Railings.</p>
+<p>Hallways.</p>
+<p>All direct vision.</p>
+<hr />
+<h3 id="environmental-storytelling">Environmental Storytelling</h3>
+<p>Players follow clues.</p>
+<p>Example:</p>
+<p>Blood trail leading to objective.</p>
+<hr />
+<h1 id="golden-path">Golden Path</h1>
+<p>Professional term.</p>
+<p>Definition:</p>
+<blockquote>
+<p>The route most players are expected to take.</p>
+</blockquote>
+<p>Not the only route.</p>
+<p>The preferred route.</p>
+<p>Designers often ask:</p>
+<blockquote>
+<p>"Can players identify the golden path?"</p>
+</blockquote>
+<hr />
+<h1 id="critical-path">Critical Path</h1>
+<p>Definition:</p>
+<blockquote>
+<p>The minimum sequence required to complete objectives.</p>
+</blockquote>
+<p>The golden path often overlaps with the critical path.</p>
+<p>Not always.</p>
+<hr />
+<h1 id="chapter-8-encounter-design">Chapter 8: Encounter Design</h1>
+<p>An encounter is:</p>
+<blockquote>
+<p>A deliberately crafted gameplay situation.</p>
+</blockquote>
+<p>Examples:</p>
+<ul>
+<li>Combat</li>
+<li>Puzzle</li>
+<li>Stealth</li>
+<li>Dialogue</li>
+</ul>
+<hr />
+<h1 id="combat-encounters">Combat Encounters</h1>
+<p>Professional encounter design balances:</p>
+<ul>
+<li>Space</li>
+<li>Enemies</li>
+<li>Resources</li>
+<li>Objectives</li>
+</ul>
+<p>Not just enemy placement.</p>
+<hr />
+<h2 id="combat-triangle">Combat Triangle</h2>
+<p>Many shooters balance:</p>
+<div class="highlight"><pre><span></span><code>CoverMobilitySightlines
+</code></pre></div>
+<p>Poor balance creates stagnant gameplay.</p>
+<hr />
+<h2 id="arena-design">Arena Design</h2>
+<p>Arena:</p>
+<p>Contained combat space.</p>
+<p>Questions:</p>
+<ul>
+<li>Where can players move?</li>
+<li>Where is safety?</li>
+<li>Where is danger?</li>
+</ul>
+<hr />
+<h2 id="combat-beats">Combat Beats</h2>
+<p>Encounter rhythm.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>Weak enemies↓Pressure increase↓Elite enemy↓Relief
+</code></pre></div>
+<p>Good encounters create emotional curves.</p>
+<hr />
+<h1 id="chapter-9-choke-points">Chapter 9: Choke Points</h1>
+<p>Definition:</p>
+<p>A narrow area controlling movement.</p>
+<p>Examples:</p>
+<ul>
+<li>Doorways</li>
+<li>Bridges</li>
+<li>Tunnels</li>
+</ul>
+<hr />
+<h2 id="uses">Uses</h2>
+<p>Control:</p>
+<ul>
+<li>Movement</li>
+<li>Combat</li>
+<li>Information</li>
+</ul>
+<hr />
+<h2 id="multiplayer-usage">Multiplayer Usage</h2>
+<p>Important for:</p>
+<ul>
+<li>Territory control</li>
+<li>Defensive positions</li>
+</ul>
+<hr />
+<h2 id="risks">Risks</h2>
+<p>Too many choke points:</p>
+<p>Creates stagnation.</p>
+<p>Players feel trapped.</p>
+<hr />
+<h1 id="chapter-10-pacing">Chapter 10: Pacing</h1>
+<p>Pacing may be the most important advanced level design skill.</p>
+<p>Definition:</p>
+<blockquote>
+<p>The control of intensity over time.</p>
+</blockquote>
+<hr />
+<h1 id="intensity-curve">Intensity Curve</h1>
+<p>Great levels rarely maintain constant intensity.</p>
+<p>Instead:</p>
+<div class="highlight"><pre><span></span><code>Calm↓Build↓Peak↓Recovery↓Build↓Peak
+</code></pre></div>
+<hr />
+<h2 id="compression">Compression</h2>
+<p>Increasing intensity.</p>
+<hr />
+<h2 id="release">Release</h2>
+<p>Reducing intensity.</p>
+<hr />
+<h2 id="escalation">Escalation</h2>
+<p>Introducing new variables.</p>
+<p>Examples:</p>
+<ul>
+<li>New enemy type</li>
+<li>Environmental hazard</li>
+<li>Boss</li>
+</ul>
+<hr />
+<h1 id="chapter-11-metrics">Chapter 11: Metrics</h1>
+<p>Metrics are measurements used to build levels.</p>
+<p>Professionals rely heavily on metrics.</p>
+<hr />
+<h2 id="examples">Examples</h2>
+<p>Character height.</p>
+<p>Jump distance.</p>
+<p>Sprint speed.</p>
+<p>Weapon range.</p>
+<p>Cover height.</p>
+<p>Door width.</p>
+<hr />
+<h2 id="why-metrics-matter">Why Metrics Matter</h2>
+<p>Without metrics:</p>
+<p>Levels become inconsistent.</p>
+<p>Consistency creates readability.</p>
+<hr />
+<h1 id="grayboxing-blockouts">Grayboxing / Blockouts</h1>
+<p>Professional workflow:</p>
+<div class="highlight"><pre><span></span><code>Gameplay↓Testing↓Iteration↓Art Pass
+</code></pre></div>
+<p>NOT:</p>
+<div class="highlight"><pre><span></span><code>Art↓Gameplay
+</code></pre></div>
+<hr />
+<h2 id="graybox">Graybox</h2>
+<p>Simple geometry used to test design.</p>
+<p>Examples:</p>
+<ul>
+<li>Cubes</li>
+<li>Planes</li>
+<li>Basic shapes</li>
+</ul>
+<p>Purpose:</p>
+<p>Validate gameplay.</p>
+<hr />
+<h1 id="chapter-12-player-funnels">Chapter 12: Player Funnels</h1>
+<p>A funnel narrows player movement.</p>
+<p>Used for:</p>
+<ul>
+<li>Guidance</li>
+<li>Pacing</li>
+<li>Dramatic reveals</li>
+</ul>
+<hr />
+<h2 id="hard-funnel">Hard Funnel</h2>
+<p>Physical restriction.</p>
+<p>Examples:</p>
+<ul>
+<li>Corridor</li>
+<li>Locked gate</li>
+</ul>
+<hr />
+<h2 id="soft-funnel">Soft Funnel</h2>
+<p>Psychological guidance.</p>
+<p>Examples:</p>
+<ul>
+<li>Lighting</li>
+<li>Visual interest</li>
+<li>Objectives</li>
+</ul>
+<p>Senior designers prefer soft funnels whenever possible.</p>
+<hr />
+<h1 id="chapter-13-environmental-storytelling">Chapter 13: Environmental Storytelling</h1>
+<p>One of the most misunderstood concepts.</p>
+<p>Definition:</p>
+<blockquote>
+<p>Narrative communicated through environment rather than exposition.</p>
+</blockquote>
+<hr />
+<h2 id="example">Example</h2>
+<p>Destroyed laboratory.</p>
+<p>Broken containment chamber.</p>
+<p>Blood trail.</p>
+<p>No dialogue needed.</p>
+<p>Player constructs story.</p>
+<hr />
+<h1 id="passive-storytelling">Passive Storytelling</h1>
+<p>Information exists.</p>
+<p>Player may ignore it.</p>
+<hr />
+<h1 id="active-storytelling">Active Storytelling</h1>
+<p>Player interaction reveals story.</p>
+<p>Examples:</p>
+<ul>
+<li>Notes</li>
+<li>Audio logs</li>
+<li>Interactive objects</li>
+</ul>
+<hr />
+<h1 id="chapter-14-genre-specific-level-design-thinking">Chapter 14: Genre-Specific Level Design Thinking</h1>
+<h2 id="fps-design">FPS Design</h2>
+<p>Focuses on:</p>
+<ul>
+<li>Sightlines</li>
+<li>Cover</li>
+<li>Combat rhythm</li>
+</ul>
+<p>Questions:</p>
+<blockquote>
+<p>Can players read combat space?</p>
+</blockquote>
+<hr />
+<h2 id="third-person-action">Third-Person Action</h2>
+<p>Focuses on:</p>
+<ul>
+<li>Camera management</li>
+<li>Traversal readability</li>
+<li>Encounter staging</li>
+</ul>
+<hr />
+<h2 id="rpg-design">RPG Design</h2>
+<p>Focuses on:</p>
+<ul>
+<li>Exploration</li>
+<li>Quest routing</li>
+<li>Environmental storytelling</li>
+</ul>
+<hr />
+<h2 id="strategy-games">Strategy Games</h2>
+<p>Focuses on:</p>
+<ul>
+<li>Resource geography</li>
+<li>Territorial control</li>
+<li>Information asymmetry</li>
+</ul>
+<hr />
+<h2 id="simulation-games">Simulation Games</h2>
+<p>Focuses on:</p>
+<ul>
+<li>System interaction</li>
+<li>Emergent behavior</li>
+<li>Efficiency</li>
+</ul>
+<hr />
+<h2 id="horror-games">Horror Games</h2>
+<p>Focuses on:</p>
+<ul>
+<li>Uncertainty</li>
+<li>Claustrophobia</li>
+<li>Controlled information</li>
+</ul>
+<hr />
+<h2 id="multiplayer-maps">Multiplayer Maps</h2>
+<p>Focuses on:</p>
+<ul>
+<li>Fairness</li>
+<li>Symmetry</li>
+<li>Counterplay</li>
+<li>Predictability</li>
+</ul>
+<hr />
+<h1 id="chapter-15-senior-level-vocabulary">Chapter 15: Senior-Level Vocabulary</h1>
+<p>These are phrases you will hear in professional reviews.</p>
+<hr />
+<h2 id="readability">Readability</h2>
+<p>Can players understand what's happening?</p>
+<hr />
+<h2 id="visual-noise">Visual Noise</h2>
+<p>Information that competes for attention.</p>
+<hr />
+<h2 id="cognitive-load">Cognitive Load</h2>
+<p>Mental effort required.</p>
+<hr />
+<h2 id="decision-density">Decision Density</h2>
+<p>Number of meaningful decisions per minute.</p>
+<hr />
+<h2 id="dead-space">Dead Space</h2>
+<p>Area lacking meaningful interaction.</p>
+<hr />
+<h2 id="kill-zone">Kill Zone</h2>
+<p>Area exposed to danger.</p>
+<hr />
+<h2 id="safe-space">Safe Space</h2>
+<p>Area offering recovery.</p>
+<hr />
+<h2 id="combat-readability">Combat Readability</h2>
+<p>Can players interpret threats?</p>
+<hr />
+<h2 id="traversal-language">Traversal Language</h2>
+<p>Consistent communication of movement opportunities.</p>
+<hr />
+<h2 id="environmental-language">Environmental Language</h2>
+<p>Repeated visual rules players learn.</p>
+<p>Example:</p>
+<p>Yellow = climbable.</p>
+<p>Red barrel = explosive.</p>
+<hr />
+<h1 id="the-master-mental-model-of-level-design">The Master Mental Model of Level Design</h1>
+<p>Beginners think:</p>
+<blockquote>
+<p>"How do I build this environment?"</p>
+</blockquote>
+<p>Intermediate designers think:</p>
+<blockquote>
+<p>"How do I create this gameplay?"</p>
+</blockquote>
+<p>Senior designers think:</p>
+<blockquote>
+<p>"How do I shape player behavior?"</p>
+</blockquote>
+<p>Expert designers think:</p>
+<blockquote>
+<p>"How do I shape player psychology through space, information, and choice?"</p>
+</blockquote>
+<p>That final transition is what separates a map creator from a true level designer.</p>
+<hr />
+<h1 id="professional-exercise">Professional Exercise</h1>
+<p>When playing any game, stop every 5 minutes and ask:</p>
+<ol>
+<li>What behavior is this space encouraging?</li>
+<li>What behavior is it discouraging?</li>
+<li>What information is being revealed?</li>
+<li>What information is being hidden?</li>
+<li>Where is the player's attention being directed?</li>
+<li>What emotional state is the designer attempting to create?</li>
+<li>What level-design techniques are being used to achieve it?</li>
+</ol>
+<p>If you can consistently answer those questions, you will begin to see levels the way professional designers do.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

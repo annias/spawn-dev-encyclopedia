@@ -1,0 +1,1427 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The canonical game development language and systems architecture reference.">
+      
+      
+      
+        <link rel="canonical" href="https://annias.github.io/spawn-dev-encyclopedia/04-art-visdev/">
+      
+      
+        <link rel="prev" href="../03-level-design/">
+      
+      
+        <link rel="next" href="../05-programming/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>04. Art & VisDev - Spawn Dev Encyclopedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#game-development-language-concepts-encyclopedia" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-header__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Spawn Dev Encyclopedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              04. Art & VisDev
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-nav__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Spawn Dev Encyclopedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-game-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Game Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-level-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Level Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Art & VisDev
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Art & VisDev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-art-visual-development-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 4 — Art &amp; Visual Development Vocabulary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Programming & Tech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Audio Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-ux-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. UX & UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-production/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Production
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09. QA & Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-liveops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. LiveOps & Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Studio Economics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-creative-direction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Creative Direction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Cross-Discipline Comm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-jargon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Jargon & Acronyms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-mental-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Expert Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-art-visual-development-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 4 — Art &amp; Visual Development Vocabulary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="game-development-language-concepts-encyclopedia">GAME DEVELOPMENT LANGUAGE &amp; CONCEPTS ENCYCLOPEDIA</h1>
+<h2 id="chapter-4-art-visual-development-vocabulary">Chapter 4 — Art &amp; Visual Development Vocabulary</h2>
+<hr />
+<h1 id="the-core-mental-shift-what-art-means-in-game-development">The Core Mental Shift: What “Art” Means in Game Development</h1>
+<p>In game development, “art” is not just visual quality.</p>
+<p>Professionally, art is defined as:</p>
+<blockquote>
+<p>A communication system that encodes gameplay meaning, emotional tone, identity, and functional clarity into visual form.</p>
+</blockquote>
+<p>This is critical:</p>
+<p>Senior artists are not primarily thinking about “making things look good.”</p>
+<p>They are thinking about:</p>
+<ul>
+<li>Readability</li>
+<li>Function</li>
+<li>Identity</li>
+<li>Emotional tone</li>
+<li>Technical constraints</li>
+<li>Production scalability</li>
+<li>Cross-discipline communication</li>
+</ul>
+<p>A common AAA phrase:</p>
+<blockquote>
+<p>“Art serves gameplay, gameplay serves clarity.”</p>
+</blockquote>
+<hr />
+<h1 id="chapter-1-the-art-pipeline-end-to-end-production-language">Chapter 1: The Art Pipeline (End-to-End Production Language)</h1>
+<p>Every visual asset goes through a structured pipeline.</p>
+<h2 id="1-pre-production-visual-development">1. Pre-Production (Visual Development)</h2>
+<p>This phase defines:</p>
+<ul>
+<li>Style direction</li>
+<li>Visual language</li>
+<li>Mood</li>
+<li>References</li>
+<li>Constraints</li>
+</ul>
+<h3 id="key-terms">Key Terms</h3>
+<h2 id="visual-development-visdev">Visual Development (VisDev)</h2>
+<p>The exploration phase where the game’s visual identity is defined.</p>
+<p>Includes:</p>
+<ul>
+<li>Concept sketches</li>
+<li>Mood exploration</li>
+<li>Style tests</li>
+</ul>
+<hr />
+<h2 id="art-bible">Art Bible</h2>
+<p>A foundational document defining:</p>
+<ul>
+<li>Style rules</li>
+<li>Color palette</li>
+<li>Shape language</li>
+<li>Lighting rules</li>
+<li>Reference benchmarks</li>
+</ul>
+<p>Used to enforce consistency across teams.</p>
+<hr />
+<h2 id="mood-board">Mood Board</h2>
+<p>A curated collection of reference imagery that defines:</p>
+<ul>
+<li>Tone</li>
+<li>Emotion</li>
+<li>Style direction</li>
+</ul>
+<p>Not random images — but intentional visual alignment.</p>
+<hr />
+<h2 id="style-guide">Style Guide</h2>
+<p>A stricter, production-facing version of the Art Bible.</p>
+<p>Used to prevent:</p>
+<ul>
+<li>Visual inconsistency</li>
+<li>Asset drift across teams</li>
+</ul>
+<hr />
+<h1 id="chapter-2-concept-art-terminology">Chapter 2: Concept Art Terminology</h1>
+<p>Concept art is not final art.</p>
+<p>It is:</p>
+<blockquote>
+<p>Visual problem-solving.</p>
+</blockquote>
+<hr />
+<h2 id="thumbnailing">Thumbnailing</h2>
+<p>Rapid small sketches used to explore composition and ideas.</p>
+<p>Purpose:</p>
+<ul>
+<li>Speed over detail</li>
+<li>Explore many ideas quickly</li>
+</ul>
+<p>Professionals may produce dozens or hundreds.</p>
+<hr />
+<h2 id="iteration">Iteration</h2>
+<p>Repeated refinement cycles.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>Thumbnail → Sketch → Refined Concept → Final Concept
+</code></pre></div>
+<hr />
+<h2 id="keyshot-hero-shot">Keyshot / Hero Shot</h2>
+<p>A fully realized concept image showing:</p>
+<ul>
+<li>Lighting</li>
+<li>Composition</li>
+<li>Mood</li>
+<li>Final intended look</li>
+</ul>
+<p>Used for marketing and approval.</p>
+<hr />
+<h2 id="silhouette-exploration">Silhouette Exploration</h2>
+<p>Testing readability of forms in black shape only.</p>
+<p>Why it matters:</p>
+<p>If a character is recognizable in silhouette, it reads well in gameplay.</p>
+<hr />
+<h2 id="shape-language">Shape Language</h2>
+<p>The emotional meaning of shapes.</p>
+<table>
+<thead>
+<tr>
+<th>Shape</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Circles</td>
+<td>Friendly, soft</td>
+</tr>
+<tr>
+<td>Squares</td>
+<td>Stable, strong</td>
+</tr>
+<tr>
+<td>Triangles</td>
+<td>Dangerous, aggressive</td>
+</tr>
+</tbody>
+</table>
+<p>Used heavily in character and environment design.</p>
+<hr />
+<h2 id="visual-hierarchy">Visual Hierarchy</h2>
+<p>Controlling what the player sees first, second, third.</p>
+<p>Achieved via:</p>
+<ul>
+<li>Contrast</li>
+<li>Color</li>
+<li>Scale</li>
+<li>Lighting</li>
+</ul>
+<hr />
+<h1 id="chapter-3-environment-art-vocabulary">Chapter 3: Environment Art Vocabulary</h1>
+<hr />
+<h2 id="modular-design">Modular Design</h2>
+<p>Creating reusable asset pieces.</p>
+<p>Example:</p>
+<ul>
+<li>Walls</li>
+<li>Floors</li>
+<li>Corners</li>
+<li>Pillars</li>
+</ul>
+<p>Allows efficient level building.</p>
+<hr />
+<h2 id="kitbashing">Kitbashing</h2>
+<p>Assembling new assets from existing pieces.</p>
+<p>Used heavily in:</p>
+<ul>
+<li>Sci-fi environments</li>
+<li>Industrial structures</li>
+</ul>
+<hr />
+<h2 id="dressing">Dressing</h2>
+<p>Placing props into a level after blockout.</p>
+<p>Not random decoration:</p>
+<p>It supports:</p>
+<ul>
+<li>Storytelling</li>
+<li>Navigation</li>
+<li>Atmosphere</li>
+</ul>
+<hr />
+<h2 id="set-dressing-language">Set Dressing Language</h2>
+<p>Professional term for environmental storytelling through props.</p>
+<p>Example:</p>
+<ul>
+<li>Broken chairs → conflict</li>
+<li>Papers everywhere → panic</li>
+<li>Barricades → defense</li>
+</ul>
+<hr />
+<h2 id="texel-density">Texel Density</h2>
+<p>Consistency of texture resolution across assets.</p>
+<p>Why it matters:</p>
+<p>Prevents visual mismatch.</p>
+<hr />
+<h2 id="uv-mapping">UV Mapping</h2>
+<p>Flattening 3D surfaces into 2D space for texturing.</p>
+<hr />
+<h2 id="baking">Baking</h2>
+<p>Transferring high-detail information to low-poly models.</p>
+<p>Includes:</p>
+<ul>
+<li>Normal maps</li>
+<li>Ambient occlusion</li>
+<li>Curvature maps</li>
+</ul>
+<hr />
+<h2 id="pbr-physically-based-rendering">PBR (Physically Based Rendering)</h2>
+<p>Modern rendering system based on real-world light behavior.</p>
+<p>Key components:</p>
+<ul>
+<li>Albedo</li>
+<li>Roughness</li>
+<li>Metallic</li>
+<li>Normal maps</li>
+</ul>
+<hr />
+<h2 id="material-system">Material System</h2>
+<p>Defines how surfaces respond to light.</p>
+<p>Examples:</p>
+<ul>
+<li>Metal</li>
+<li>Wood</li>
+<li>Fabric</li>
+<li>Skin</li>
+</ul>
+<hr />
+<h1 id="chapter-4-3d-modeling-vocabulary">Chapter 4: 3D Modeling Vocabulary</h1>
+<hr />
+<h2 id="topology">Topology</h2>
+<p>The structure of polygon flow.</p>
+<p>Good topology:</p>
+<ul>
+<li>Supports animation</li>
+<li>Optimized for performance</li>
+</ul>
+<p>Bad topology:</p>
+<ul>
+<li>Causes deformation artifacts</li>
+<li>Wastes polygons</li>
+</ul>
+<hr />
+<h2 id="retopology">Retopology</h2>
+<p>Rebuilding high-poly models into optimized mesh structures.</p>
+<p>Used after sculpting.</p>
+<hr />
+<h2 id="hard-surface-modeling">Hard Surface Modeling</h2>
+<p>Modeling mechanical objects:</p>
+<ul>
+<li>Weapons</li>
+<li>Vehicles</li>
+<li>Buildings</li>
+</ul>
+<p>Focus:</p>
+<p>Precision and clean edges.</p>
+<hr />
+<h2 id="organic-modeling">Organic Modeling</h2>
+<p>Modeling natural forms:</p>
+<ul>
+<li>Characters</li>
+<li>Creatures</li>
+<li>Cloth</li>
+</ul>
+<p>Focus:</p>
+<p>Flow and deformation.</p>
+<hr />
+<h2 id="sculpting">Sculpting</h2>
+<p>High-detail modeling using digital clay tools.</p>
+<p>Used for:</p>
+<ul>
+<li>Fine detail</li>
+<li>Surface imperfections</li>
+<li>High-poly sources for baking</li>
+</ul>
+<hr />
+<h1 id="chapter-5-animation-terminology">Chapter 5: Animation Terminology</h1>
+<hr />
+<h2 id="keyframes">Keyframes</h2>
+<p>Primary poses defining motion.</p>
+<p>Everything between is interpolated.</p>
+<hr />
+<h2 id="in-betweens">In-Betweens</h2>
+<p>Intermediate frames between key poses.</p>
+<hr />
+<h2 id="rigging">Rigging</h2>
+<p>Creating a skeletal structure for animation.</p>
+<p>Includes:</p>
+<ul>
+<li>Bones</li>
+<li>Constraints</li>
+<li>Controls</li>
+</ul>
+<hr />
+<h2 id="ik-inverse-kinematics">IK (Inverse Kinematics)</h2>
+<p>End-effector-driven motion.</p>
+<p>Example:</p>
+<p>Foot stays planted while body moves.</p>
+<hr />
+<h2 id="fk-forward-kinematics">FK (Forward Kinematics)</h2>
+<p>Chain-driven motion.</p>
+<p>Example:</p>
+<p>Rotating shoulder affects arm and hand.</p>
+<hr />
+<h2 id="blend-trees">Blend Trees</h2>
+<p>Systems that blend multiple animations.</p>
+<p>Example:</p>
+<p>Walking → running → sprinting smoothly.</p>
+<hr />
+<h2 id="state-machines">State Machines</h2>
+<p>Animation logic systems controlling transitions.</p>
+<p>Example:</p>
+<p>Idle → Walk → Run → Jump</p>
+<hr />
+<h2 id="root-motion">Root Motion</h2>
+<p>Animation drives character movement directly.</p>
+<p>Alternative:</p>
+<p>Movement driven by code.</p>
+<hr />
+<h2 id="motion-matching">Motion Matching</h2>
+<p>Advanced system selecting best animation frame-by-frame.</p>
+<p>Used in modern AAA locomotion systems.</p>
+<hr />
+<h1 id="chapter-6-technical-art-critical-bridge-discipline">Chapter 6: Technical Art (Critical Bridge Discipline)</h1>
+<p>Technical art is where art meets engineering.</p>
+<p>A technical artist is often described as:</p>
+<blockquote>
+<p>The translator between artists and engineers.</p>
+</blockquote>
+<hr />
+<h2 id="shader-development">Shader Development</h2>
+<p>Writing programs that define surface rendering behavior.</p>
+<p>Used for:</p>
+<ul>
+<li>Water</li>
+<li>Skin</li>
+<li>Glass</li>
+<li>Stylized effects</li>
+</ul>
+<hr />
+<h2 id="material-editor">Material Editor</h2>
+<p>Node-based system for building shaders visually.</p>
+<hr />
+<h2 id="vfx-systems">VFX Systems</h2>
+<p>Visual effects such as:</p>
+<ul>
+<li>Explosions</li>
+<li>Smoke</li>
+<li>Magic spells</li>
+<li>Weather</li>
+</ul>
+<hr />
+<h2 id="particle-systems">Particle Systems</h2>
+<p>Simulated collections of small visual elements.</p>
+<hr />
+<h2 id="gpu-optimization">GPU Optimization</h2>
+<p>Ensuring effects run efficiently on hardware.</p>
+<p>Includes:</p>
+<ul>
+<li>Reducing overdraw</li>
+<li>Limiting shader complexity</li>
+</ul>
+<hr />
+<h2 id="draw-calls">Draw Calls</h2>
+<p>Instructions sent from CPU to GPU to render objects.</p>
+<p>Fewer draw calls = better performance.</p>
+<hr />
+<h2 id="overdraw">Overdraw</h2>
+<p>Pixels rendered multiple times unnecessarily.</p>
+<p>Common in:</p>
+<ul>
+<li>VFX</li>
+<li>Transparency-heavy scenes</li>
+</ul>
+<hr />
+<h1 id="chapter-7-lighting-rendering-vocabulary">Chapter 7: Lighting &amp; Rendering Vocabulary</h1>
+<hr />
+<h2 id="global-illumination-gi">Global Illumination (GI)</h2>
+<p>Simulation of indirect light bounce.</p>
+<p>Creates realism and depth.</p>
+<hr />
+<h2 id="light-baking">Light Baking</h2>
+<p>Pre-calculating lighting into textures.</p>
+<p>Used for performance optimization.</p>
+<hr />
+<h2 id="dynamic-lighting">Dynamic Lighting</h2>
+<p>Real-time lighting calculations.</p>
+<p>More expensive but flexible.</p>
+<hr />
+<h2 id="ambient-occlusion-ao">Ambient Occlusion (AO)</h2>
+<p>Simulated shadowing in creases and corners.</p>
+<p>Adds depth perception.</p>
+<hr />
+<h2 id="post-processing">Post Processing</h2>
+<p>Effects applied after rendering:</p>
+<ul>
+<li>Bloom</li>
+<li>Color grading</li>
+<li>Motion blur</li>
+</ul>
+<hr />
+<h2 id="color-grading">Color Grading</h2>
+<p>Adjusting final image tone.</p>
+<p>Used heavily for mood.</p>
+<hr />
+<h1 id="chapter-8-cross-discipline-communication-critical-skill-area">Chapter 8: Cross-Discipline Communication (Critical Skill Area)</h1>
+<hr />
+<h2 id="how-artists-speak-to-designers">How Artists Speak to Designers</h2>
+<p>Instead of:</p>
+<blockquote>
+<p>“Make it look cooler”</p>
+</blockquote>
+<p>They say:</p>
+<ul>
+<li>“Improve readability of this path”</li>
+<li>“Increase visual hierarchy here”</li>
+<li>“Clarify player intention at this junction”</li>
+</ul>
+<hr />
+<h2 id="how-designers-speak-to-artists">How Designers Speak to Artists</h2>
+<p>Instead of:</p>
+<blockquote>
+<p>“Make this area fun”</p>
+</blockquote>
+<p>They say:</p>
+<ul>
+<li>“This space should communicate danger and reward simultaneously”</li>
+<li>“We need a strong focal point to guide navigation”</li>
+</ul>
+<hr />
+<h2 id="how-technical-artists-translate">How Technical Artists Translate</h2>
+<p>They convert:</p>
+<p>Art intent → engine constraints</p>
+<p>Example:</p>
+<blockquote>
+<p>“We want volumetric fog”</p>
+</blockquote>
+<p>becomes:</p>
+<blockquote>
+<p>“We can approximate this with layered particles + depth-based falloff”</p>
+</blockquote>
+<hr />
+<h2 id="art-director-role">Art Director Role</h2>
+<p>The art director ensures:</p>
+<ul>
+<li>Consistency</li>
+<li>Style cohesion</li>
+<li>Emotional alignment</li>
+<li>Brand identity</li>
+</ul>
+<p>They do not typically create assets.</p>
+<p>They define vision.</p>
+<hr />
+<h1 id="chapter-9-ui-art-vocabulary">Chapter 9: UI Art Vocabulary</h1>
+<hr />
+<h2 id="hud-heads-up-display">HUD (Heads-Up Display)</h2>
+<p>On-screen gameplay information.</p>
+<p>Examples:</p>
+<ul>
+<li>Health bars</li>
+<li>Ammo counters</li>
+<li>Minimap</li>
+</ul>
+<hr />
+<h2 id="diegetic-ui">Diegetic UI</h2>
+<p>UI existing inside the game world.</p>
+<p>Example:</p>
+<p>Dead Space health bar on character suit.</p>
+<hr />
+<h2 id="non-diegetic-ui">Non-Diegetic UI</h2>
+<p>Traditional overlay UI.</p>
+<hr />
+<h2 id="visual-noise">Visual Noise</h2>
+<p>UI clutter reducing readability.</p>
+<hr />
+<h2 id="information-hierarchy">Information Hierarchy</h2>
+<p>What the player notices first.</p>
+<hr />
+<h2 id="affordance-in-ui">Affordance in UI</h2>
+<p>Buttons must look clickable.</p>
+<hr />
+<h1 id="chapter-10-animation-language-in-production-context">Chapter 10: Animation Language in Production Context</h1>
+<hr />
+<h2 id="animation-polish">Animation Polish</h2>
+<p>Improving:</p>
+<ul>
+<li>Timing</li>
+<li>Weight</li>
+<li>Fluidity</li>
+</ul>
+<hr />
+<h2 id="anticipation">Anticipation</h2>
+<p>Movement before action.</p>
+<p>Example:</p>
+<p>Character pulls back before punching.</p>
+<hr />
+<h2 id="follow-through">Follow-through</h2>
+<p>Continuation after motion ends.</p>
+<hr />
+<h2 id="ease-in-ease-out">Ease In / Ease Out</h2>
+<p>Acceleration curves of motion.</p>
+<hr />
+<h1 id="chapter-11-industry-reality-of-art-production">Chapter 11: Industry Reality of Art Production</h1>
+<hr />
+<h2 id="concept-vs-production-art">Concept vs Production Art</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Production</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exploratory</td>
+<td>Final</td>
+</tr>
+<tr>
+<td>Flexible</td>
+<td>Locked</td>
+</tr>
+<tr>
+<td>Fast</td>
+<td>Optimized</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="asset-lock">Asset Lock</h2>
+<p>Point where changes become expensive.</p>
+<hr />
+<h2 id="revisions">Revisions</h2>
+<p>Iteration cycles after feedback.</p>
+<p>Common in:</p>
+<ul>
+<li>Art reviews</li>
+<li>Milestone reviews</li>
+</ul>
+<hr />
+<h2 id="art-passes">Art Passes</h2>
+<p>Layered refinement stages:</p>
+<ol>
+<li>Blockout pass</li>
+<li>Material pass</li>
+<li>Lighting pass</li>
+<li>Polish pass</li>
+</ol>
+<hr />
+<h1 id="chapter-12-senior-level-mental-model-of-art-in-games">Chapter 12: Senior-Level Mental Model of Art in Games</h1>
+<p>Beginners think:</p>
+<blockquote>
+<p>“How do I make this look good?”</p>
+</blockquote>
+<p>Intermediate artists think:</p>
+<blockquote>
+<p>“How do I make this consistent with style?”</p>
+</blockquote>
+<p>Senior professionals think:</p>
+<blockquote>
+<p>“How does this visual element communicate gameplay information, emotional tone, and system clarity under production constraints?”</p>
+</blockquote>
+<p>Expert artists think:</p>
+<blockquote>
+<p>“How does every visual decision support player understanding without explanation?”</p>
+</blockquote>
+<hr />
+<h1 id="key-insight-critical">Key Insight (Critical)</h1>
+<p>In AAA development:</p>
+<blockquote>
+<p>Art is not decoration.<br />
+It is information design in visual form.</p>
+</blockquote>
+<hr />
+<h1 id="transition-to-next-discipline">Transition to Next Discipline</h1>
+<p>We have now covered:</p>
+<ul>
+<li>Game development foundations</li>
+<li>Game design language</li>
+<li>Level design language</li>
+<li>Art &amp; visual development language</li>
+</ul>
+<p>Next we move into a discipline that connects everything:</p>
+<h1 id="technical-art-deep-engineering-bridge-layer-or-programming-game-engineering">👉 Technical Art (deep engineering bridge layer) OR Programming &amp; Game Engineering</h1>
+<p>This is where:</p>
+<ul>
+<li>systems become code</li>
+<li>visuals become runtime behavior</li>
+<li>gameplay becomes architecture</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

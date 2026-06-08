@@ -1,0 +1,1307 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The canonical game development language and systems architecture reference.">
+      
+      
+      
+        <link rel="canonical" href="https://annias.github.io/spawn-dev-encyclopedia/07-ux-ui/">
+      
+      
+        <link rel="prev" href="../06-audio/">
+      
+      
+        <link rel="next" href="../08-production/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>07. UX & UI - Spawn Dev Encyclopedia</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#game-development-language-concepts-encyclopedia" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-header__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Spawn Dev Encyclopedia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              07. UX & UI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Spawn Dev Encyclopedia" class="md-nav__button md-logo" aria-label="Spawn Dev Encyclopedia" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Spawn Dev Encyclopedia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-game-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Game Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-level-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Level Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-art-visdev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Art & VisDev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Programming & Tech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Audio Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. UX & UI
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. UX & UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-7-ux-ui-user-experience-user-interface-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 7 — UX &amp; UI (User Experience &amp; User Interface Terminology)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-production/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Production
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09. QA & Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-liveops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. LiveOps & Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-economics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Studio Economics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-creative-direction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Creative Direction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Cross-Discipline Comm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-jargon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Jargon & Acronyms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-mental-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Expert Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-7-ux-ui-user-experience-user-interface-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 7 — UX &amp; UI (User Experience &amp; User Interface Terminology)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="game-development-language-concepts-encyclopedia">GAME DEVELOPMENT LANGUAGE &amp; CONCEPTS ENCYCLOPEDIA</h1>
+<h2 id="chapter-7-ux-ui-user-experience-user-interface-terminology">Chapter 7 — UX &amp; UI (User Experience &amp; User Interface Terminology)</h2>
+<hr />
+<h1 id="the-core-mental-shift-what-uxui-means-in-games">The Core Mental Shift: What UX/UI Means in Games</h1>
+<p>In games, UX/UI is not “menus and HUDs.”</p>
+<p>Professionally, it is:</p>
+<blockquote>
+<p>The system that translates complex simulation state into human-readable, actionable information under real-time pressure.</p>
+</blockquote>
+<p>A strong AAA principle:</p>
+<blockquote>
+<p>“If the player is confused, the UI has failed — even if the system is working perfectly.”</p>
+</blockquote>
+<p>UX/UI is fundamentally about:</p>
+<ul>
+<li>Clarity</li>
+<li>Decision support</li>
+<li>Cognitive load management</li>
+<li>Attention guidance</li>
+<li>Interaction speed</li>
+</ul>
+<hr />
+<h1 id="chapter-1-ux-vs-ui-critical-distinction">Chapter 1: UX vs UI (Critical Distinction)</h1>
+<p>These terms are often confused.</p>
+<hr />
+<h2 id="ui-user-interface">UI (User Interface)</h2>
+<p>The <strong>visual and interactive layer</strong>.</p>
+<p>Examples:</p>
+<ul>
+<li>HUD</li>
+<li>Menus</li>
+<li>Buttons</li>
+<li>Icons</li>
+<li>Maps</li>
+</ul>
+<p>UI is what the player sees and interacts with.</p>
+<hr />
+<h2 id="ux-user-experience">UX (User Experience)</h2>
+<p>The <strong>total experience of interacting with the game systems</strong>.</p>
+<p>Includes:</p>
+<ul>
+<li>Navigation flow</li>
+<li>Menu friction</li>
+<li>Clarity of systems</li>
+<li>Tutorial effectiveness</li>
+<li>Feedback timing</li>
+</ul>
+<p>UX exists even without visible UI.</p>
+<p>Example:</p>
+<ul>
+<li>Movement feel = UX</li>
+<li>Inventory frustration = UX</li>
+<li>Confusing quest flow = UX</li>
+</ul>
+<hr />
+<h1 id="chapter-2-information-architecture-ia">Chapter 2: Information Architecture (IA)</h1>
+<hr />
+<h2 id="information-architecture">Information Architecture</h2>
+<p>The structural organization of information.</p>
+<p>In games:</p>
+<blockquote>
+<p>How systems are grouped, labeled, and accessed.</p>
+</blockquote>
+<p>Examples:</p>
+<ul>
+<li>Inventory → Equipment → Crafting</li>
+<li>Main menu → Settings → Audio → Controls</li>
+</ul>
+<hr />
+<h2 id="why-ia-matters">Why IA matters</h2>
+<p>Poor IA causes:</p>
+<ul>
+<li>Player frustration</li>
+<li>Feature invisibility</li>
+<li>Cognitive overload</li>
+</ul>
+<p>Good IA makes complexity feel simple.</p>
+<hr />
+<h1 id="chapter-3-cognitive-load-core-ux-concept">Chapter 3: Cognitive Load (Core UX Concept)</h1>
+<hr />
+<h2 id="cognitive-load">Cognitive Load</h2>
+<p>The amount of mental effort required to understand a system.</p>
+<hr />
+<h2 id="types-of-cognitive-load">Types of Cognitive Load</h2>
+<h3 id="intrinsic-load">Intrinsic Load</h3>
+<p>The natural complexity of the system.</p>
+<p>Example:</p>
+<p>Learning chess rules.</p>
+<hr />
+<h3 id="extraneous-load">Extraneous Load</h3>
+<p>Unnecessary confusion caused by poor design.</p>
+<p>Example:</p>
+<p>Bad UI layout.</p>
+<hr />
+<h3 id="germane-load">Germane Load</h3>
+<p>Useful mental effort that builds mastery.</p>
+<p>Example:</p>
+<p>Learning combat systems over time.</p>
+<hr />
+<h1 id="ux-goal">UX Goal:</h1>
+<blockquote>
+<p>Minimize extraneous load while preserving meaningful intrinsic load.</p>
+</blockquote>
+<hr />
+<h1 id="chapter-4-interaction-design-ixd">Chapter 4: Interaction Design (IxD)</h1>
+<hr />
+<h2 id="interaction-design">Interaction Design</h2>
+<p>How players interact with systems.</p>
+<p>Focus:</p>
+<ul>
+<li>Inputs</li>
+<li>Responses</li>
+<li>Feedback loops</li>
+</ul>
+<hr />
+<h2 id="input-mapping">Input Mapping</h2>
+<p>Mapping controls to actions.</p>
+<p>Example:</p>
+<ul>
+<li>A = Jump</li>
+<li>RT = Shoot</li>
+</ul>
+<hr />
+<h2 id="responsiveness">Responsiveness</h2>
+<p>How quickly the game reacts to input.</p>
+<p>Critical concept:</p>
+<blockquote>
+<p>“Input delay breaks immersion more than visual quality issues.”</p>
+</blockquote>
+<hr />
+<h2 id="feedback-timing">Feedback Timing</h2>
+<p>Time between action and response.</p>
+<p>Examples:</p>
+<ul>
+<li>Hit confirmation sound</li>
+<li>Animation response</li>
+<li>UI flash</li>
+</ul>
+<hr />
+<h1 id="chapter-5-hud-heads-up-display">Chapter 5: HUD (Heads-Up Display)</h1>
+<hr />
+<h2 id="hud">HUD</h2>
+<p>On-screen overlay showing game state.</p>
+<p>Examples:</p>
+<ul>
+<li>Health bar</li>
+<li>Ammo count</li>
+<li>Objective tracker</li>
+</ul>
+<hr />
+<h2 id="diegetic-ui">Diegetic UI</h2>
+<p>UI existing within the game world.</p>
+<p>Example:</p>
+<ul>
+<li>Health shown on character suit (Dead Space style)</li>
+</ul>
+<hr />
+<h2 id="non-diegetic-ui">Non-Diegetic UI</h2>
+<p>Traditional overlay UI.</p>
+<p>Example:</p>
+<ul>
+<li>Floating minimap</li>
+<li>Ammo counters</li>
+</ul>
+<hr />
+<h2 id="meta-ui">Meta UI</h2>
+<p>Out-of-world systems.</p>
+<p>Example:</p>
+<ul>
+<li>Pause menus</li>
+<li>Settings screens</li>
+</ul>
+<hr />
+<h1 id="chapter-6-visual-hierarchy-critical-ui-skill">Chapter 6: Visual Hierarchy (Critical UI Skill)</h1>
+<hr />
+<h2 id="visual-hierarchy">Visual Hierarchy</h2>
+<p>The order in which the eye processes information.</p>
+<p>Controlled through:</p>
+<ul>
+<li>Size</li>
+<li>Contrast</li>
+<li>Color</li>
+<li>Position</li>
+<li>Motion</li>
+</ul>
+<hr />
+<h2 id="primary-information">Primary Information</h2>
+<p>What must be seen immediately.</p>
+<p>Examples:</p>
+<ul>
+<li>Low health warning</li>
+<li>Enemy indicators</li>
+</ul>
+<hr />
+<h2 id="secondary-information">Secondary Information</h2>
+<p>Supporting data.</p>
+<p>Examples:</p>
+<ul>
+<li>Ammo</li>
+<li>Mini-map details</li>
+</ul>
+<hr />
+<h2 id="tertiary-information">Tertiary Information</h2>
+<p>Optional or contextual data.</p>
+<p>Examples:</p>
+<ul>
+<li>Flavor text</li>
+<li>Lore descriptions</li>
+</ul>
+<hr />
+<h1 id="chapter-7-affordance-in-ui">Chapter 7: Affordance in UI</h1>
+<hr />
+<h2 id="ui-affordance">UI Affordance</h2>
+<p>How an element suggests interaction.</p>
+<p>Examples:</p>
+<ul>
+<li>Buttons look pressable</li>
+<li>Sliders look draggable</li>
+<li>Icons suggest function</li>
+</ul>
+<hr />
+<h2 id="signifiers">Signifiers</h2>
+<p>Visual cues that indicate interaction.</p>
+<p>Example:</p>
+<ul>
+<li>Highlight on hover</li>
+<li>Glow on selection</li>
+</ul>
+<hr />
+<h2 id="false-affordance">False Affordance</h2>
+<p>UI element looks interactive but is not.</p>
+<p>This is a major UX failure.</p>
+<hr />
+<h1 id="chapter-8-usability-testing">Chapter 8: Usability Testing</h1>
+<hr />
+<h2 id="usability-testing">Usability Testing</h2>
+<p>Observing real players interacting with the game.</p>
+<p>Goal:</p>
+<p>Identify confusion without developer bias.</p>
+<hr />
+<h2 id="heatmaps">Heatmaps</h2>
+<p>Visual data showing where players look or click.</p>
+<p>Used in:</p>
+<ul>
+<li>UI optimization</li>
+<li>Tutorial design</li>
+</ul>
+<hr />
+<h2 id="playtesting">Playtesting</h2>
+<p>Structured gameplay observation.</p>
+<p>Key questions:</p>
+<ul>
+<li>Where do players get stuck?</li>
+<li>What do they misunderstand?</li>
+<li>What do they ignore?</li>
+</ul>
+<hr />
+<h2 id="telemetry">Telemetry</h2>
+<p>Quantitative behavioral data.</p>
+<p>Examples:</p>
+<ul>
+<li>Time spent in menus</li>
+<li>Death locations</li>
+<li>Drop-off points</li>
+</ul>
+<hr />
+<h1 id="chapter-9-accessibility-modern-aaa-requirement">Chapter 9: Accessibility (Modern AAA Requirement)</h1>
+<hr />
+<h2 id="accessibility">Accessibility</h2>
+<p>Designing systems usable by players with disabilities.</p>
+<p>Includes:</p>
+<ul>
+<li>Visual accessibility</li>
+<li>Audio accessibility</li>
+<li>Motor accessibility</li>
+<li>Cognitive accessibility</li>
+</ul>
+<hr />
+<h2 id="colorblind-modes">Colorblind Modes</h2>
+<p>Adjusting UI color palettes for visibility.</p>
+<hr />
+<h2 id="subtitles">Subtitles</h2>
+<p>Text representation of audio.</p>
+<p>Includes:</p>
+<ul>
+<li>Speaker labels</li>
+<li>Sound descriptions</li>
+</ul>
+<hr />
+<h2 id="input-remapping">Input Remapping</h2>
+<p>Allowing players to customize controls.</p>
+<hr />
+<h2 id="difficulty-accessibility">Difficulty Accessibility</h2>
+<p>Adjustable challenge systems.</p>
+<hr />
+<h1 id="chapter-10-ui-systems-vocabulary">Chapter 10: UI Systems Vocabulary</h1>
+<hr />
+<h2 id="ui-framework">UI Framework</h2>
+<p>System that renders UI elements.</p>
+<hr />
+<h2 id="widget">Widget</h2>
+<p>Individual UI element.</p>
+<p>Examples:</p>
+<ul>
+<li>Health bar widget</li>
+<li>Inventory slot widget</li>
+</ul>
+<hr />
+<h2 id="layout-system">Layout System</h2>
+<p>Rules controlling UI positioning.</p>
+<hr />
+<h2 id="anchoring">Anchoring</h2>
+<p>UI positioning relative to screen edges.</p>
+<hr />
+<h2 id="scaling">Scaling</h2>
+<p>Adjusting UI size for resolution.</p>
+<hr />
+<h1 id="chapter-11-navigation-ux">Chapter 11: Navigation UX</h1>
+<hr />
+<h2 id="menu-flow">Menu Flow</h2>
+<p>How players move through UI screens.</p>
+<hr />
+<h2 id="friction">Friction</h2>
+<p>Anything slowing interaction unnecessarily.</p>
+<p>Example:</p>
+<p>Too many confirmation screens.</p>
+<hr />
+<h2 id="click-depth">Click Depth</h2>
+<p>Number of steps required to reach a function.</p>
+<p>Lower = better UX.</p>
+<hr />
+<h2 id="dead-ends">Dead Ends</h2>
+<p>Menus with no clear return path.</p>
+<hr />
+<h1 id="chapter-12-feedback-systems">Chapter 12: Feedback Systems</h1>
+<hr />
+<h2 id="feedback-loop">Feedback Loop</h2>
+<p>System response to player actions.</p>
+<p>Includes:</p>
+<ul>
+<li>Visual feedback</li>
+<li>Audio feedback</li>
+<li>Haptic feedback</li>
+</ul>
+<hr />
+<h2 id="haptics">Haptics</h2>
+<p>Controller vibration feedback.</p>
+<p>Used for:</p>
+<ul>
+<li>Impact</li>
+<li>Alerts</li>
+<li>Environmental effects</li>
+</ul>
+<hr />
+<h2 id="confirmation-feedback">Confirmation Feedback</h2>
+<p>Signals that action succeeded.</p>
+<p>Examples:</p>
+<ul>
+<li>Button highlight</li>
+<li>Sound cue</li>
+<li>Animation response</li>
+</ul>
+<hr />
+<h2 id="error-feedback">Error Feedback</h2>
+<p>Indicates invalid actions.</p>
+<p>Examples:</p>
+<ul>
+<li>Red flash</li>
+<li>Error sound</li>
+<li>Shake animation</li>
+</ul>
+<hr />
+<h1 id="chapter-13-ux-for-gameplay-systems">Chapter 13: UX for Gameplay Systems</h1>
+<hr />
+<h2 id="onboarding">Onboarding</h2>
+<p>Teaching players systems gradually.</p>
+<hr />
+<h2 id="progressive-disclosure">Progressive Disclosure</h2>
+<p>Revealing complexity over time.</p>
+<p>Example:</p>
+<p>New mechanics introduced slowly.</p>
+<hr />
+<h2 id="tutorialization">Tutorialization</h2>
+<p>Explicit teaching moments.</p>
+<hr />
+<h2 id="soft-tutorial">Soft Tutorial</h2>
+<p>Learning through gameplay rather than instructions.</p>
+<p>Example:</p>
+<p>Level design teaches mechanics implicitly.</p>
+<hr />
+<h1 id="chapter-14-ux-metrics">Chapter 14: UX Metrics</h1>
+<hr />
+<h2 id="retention-ux">Retention UX</h2>
+<p>How UX affects player return rates.</p>
+<hr />
+<h2 id="time-to-fun">Time to Fun</h2>
+<p>Time until player engages with core gameplay.</p>
+<p>Critical KPI in modern design.</p>
+<hr />
+<h2 id="drop-off-rate">Drop-off Rate</h2>
+<p>Where players quit.</p>
+<hr />
+<h2 id="engagement-friction">Engagement Friction</h2>
+<p>Points where players hesitate or disengage.</p>
+<hr />
+<h1 id="chapter-15-genre-specific-ux-language">Chapter 15: Genre-Specific UX Language</h1>
+<hr />
+<h2 id="fps-ux">FPS UX</h2>
+<p>Focus:</p>
+<ul>
+<li>Combat readability</li>
+<li>Crosshair clarity</li>
+<li>Enemy visibility</li>
+</ul>
+<hr />
+<h2 id="rpg-ux">RPG UX</h2>
+<p>Focus:</p>
+<ul>
+<li>Inventory management</li>
+<li>Skill trees</li>
+<li>Quest tracking</li>
+</ul>
+<hr />
+<h2 id="strategy-ux">Strategy UX</h2>
+<p>Focus:</p>
+<ul>
+<li>Information density</li>
+<li>Unit control systems</li>
+<li>Minimap clarity</li>
+</ul>
+<hr />
+<h2 id="mobile-ux">Mobile UX</h2>
+<p>Focus:</p>
+<ul>
+<li>Touch accuracy</li>
+<li>One-handed usability</li>
+<li>Session length optimization</li>
+</ul>
+<hr />
+<h1 id="chapter-16-senior-level-ux-mental-model">Chapter 16: Senior-Level UX Mental Model</h1>
+<hr />
+<h2 id="beginner-thinking">Beginner Thinking</h2>
+<blockquote>
+<p>“How do we display this information?”</p>
+</blockquote>
+<hr />
+<h2 id="intermediate-thinking">Intermediate Thinking</h2>
+<blockquote>
+<p>“How do we organize this interface?”</p>
+</blockquote>
+<hr />
+<h2 id="senior-thinking">Senior Thinking</h2>
+<blockquote>
+<p>“How do we reduce cognitive load while preserving system depth and player agency?”</p>
+</blockquote>
+<hr />
+<h2 id="expert-thinking">Expert Thinking</h2>
+<blockquote>
+<p>“How do we design information systems that allow players to make correct decisions under time pressure without consciously processing all available data?”</p>
+</blockquote>
+<hr />
+<h1 id="key-insight">Key Insight</h1>
+<p>In professional game development:</p>
+<blockquote>
+<p>UX is not about showing information. It is about controlling what the player <em>understands in time to act on it.</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
