@@ -16,6 +16,55 @@ Professionals view game development as:
 
 This distinction is important.
 
+### Pipeline vs. Network Thinking
+
+Most beginners imagine game development as a linear, straightforward sequence of steps—a pipeline where one phase finishes and hands off cleanly to the next.
+
+```mermaid
+flowchart LR
+    Idea --> Design
+    Design --> Art
+    Art --> Programming
+    Programming --> Testing
+    Testing --> Launch
+    Launch --> Support
+```
+*How beginners imagine game development.*
+
+In reality, professional studios operate in a highly interconnected network of teams, feedback loops, dependencies, and constraints. Game design, art, code, production, and QA are constantly reacting to, modifying, and limiting each other.
+
+```mermaid
+flowchart TD
+    Design --> Programming
+    Programming --> Design
+
+    Art --> Programming
+    Programming --> Art
+
+    Production --> Design
+    Production --> Programming
+    Production --> Art
+
+    QA --> Design
+    QA --> Programming
+    QA --> Art
+
+    Audio --> Design
+    Audio --> Programming
+
+    Marketing --> Production
+
+    Programming --> QA
+    Art --> QA
+
+    QA --> Production
+```
+*How professional studios actually operate.*
+
+Because changes in one discipline create immediate ripple effects in others, game development is a networked web of relationships, not a one-way conveyor belt.
+
+---
+
 Senior developers do not think primarily in terms of:
 
 - Features
@@ -30,6 +79,57 @@ They think in terms of:
 - Risks
 - Tradeoffs
 - User experience outcomes
+
+```mermaid
+mindmap
+root(("Professional Thinking"))
+    Systems
+        Economy
+        Progression
+        Combat
+    Constraints
+        Budget
+        Time
+        Team
+    Risk
+        Technical
+        Production
+        Market
+    Tradeoffs
+        Quality
+        Scope
+        Speed
+    Outcomes
+        Retention
+        Engagement
+        Revenue
+```
+
+Senior developers think in terms of systems, constraints, risks, tradeoffs, and outcomes rather than individual implementation details. Every addition or change is evaluated by its systemic cost, how it affects production schedules, and the risk it introduces to the project.
+
+---
+
+## Layers of Understanding
+
+Expertise in game development develops through a progression of mental models. As developers gain experience, their focus shifts from local components to systemic tradeoffs and strategic alignment.
+
+```mermaid
+flowchart TD
+    Terms --> Concepts
+    Concepts --> Systems
+    Systems --> Interactions
+    Interactions --> Tradeoffs
+    Tradeoffs --> Strategy
+    Strategy --> Leadership
+```
+
+- **Beginners** focus on memorizing **terminology** (e.g., what is a draw call?).
+- **Intermediate Developers** understand **concepts** in isolation (e.g., how to reduce draw calls).
+- **Senior Developers** analyze **systems** and their dependencies (e.g., how UI design affects draw calls).
+- **Leads** evaluate the **interactions** and **tradeoffs** (e.g., whether to prioritize lower latency or higher visual fidelity).
+- **Directors & Producers** weigh the **strategic implications** and align teams across disciplines, translating technical limitations into creative solutions.
+
+True expertise is not just about accumulating facts—it is about developing more sophisticated mental models of how games are built and played.
 
 ---
 
@@ -125,6 +225,111 @@ Without production:
 - Teams become blocked
 
 Producers optimize information flow.
+
+---
+
+## Everything is Connected
+
+Game development is the management of interconnected, dynamic systems. Adding or changing a single feature does not occur in a vacuum; it sends waves across multiple systems, affecting balance, visuals, performance, and player behavior.
+
+```mermaid
+graph TD
+    Combat --> Economy
+    Combat --> Progression
+    Combat --> UI
+    Combat --> Audio
+    Combat --> Analytics
+    Combat --> Difficulty
+    Difficulty --> Retention
+    Economy --> Retention
+    Progression --> Retention
+```
+
+For example, adjusting the damage of a weapon (Combat) directly cascades to:
+- **Difficulty & Retention:** If combat is too hard or too easy, retention drops.
+- **Progression & Economy:** Players may earn resources faster or slower, distorting the progression loop.
+- **UI & Audio:** Visual telegraphs and audio hits must be updated to align with the new combat dynamics.
+- **Analytics:** Data tracking must monitor how this tweak shifts overall player behavior.
+
+Viewing a game as a network of connected systems prevents the "silo effect," where one discipline implements a feature that inadvertently breaks another.
+
+---
+
+## The Game Studio as a System
+
+Just as the game itself is a system of rules, the studio that creates it is a system of specialized, coordinated teams.
+
+```mermaid
+mindmap
+root(("Game Studio"))
+    Design
+    Programming
+    Art
+    Audio
+    Production
+    QA
+    Marketing
+    Community
+    Analytics
+```
+
+A successful game requires all parts of the studio to operate as a coherent organism:
+- **Design** designs systems.
+- **Programming** implements them.
+- **Art** and **Audio** fill them with sensory content.
+- **Production** plans resource allocations.
+- **QA** validates behavior.
+- **Marketing**, **Community**, and **Analytics** manage player interactions, expectations, and feedback loops.
+
+---
+
+## The Communication Problem
+
+Because a game studio is composed of separate, specialized disciplines, communication issues are common. Different roles view the game through different lenses and speak separate technical languages, even when they are working on the exact same feature.
+
+```mermaid
+flowchart LR
+    Designer["Game Feel"] --> PlayerExperience
+    Programmer["Input Latency"] --> PlayerExperience
+    Animator["Animation Timing"] --> PlayerExperience
+    Audio["Response Feedback"] --> PlayerExperience
+    PlayerExperience["Player Experience"]
+```
+
+- A **Designer** wants to improve **"Game Feel"**.
+- A **Programmer** optimizes **"Input Latency"**.
+- An **Animator** adjusts **"Animation Timing"**.
+- An **Audio Designer** tunes **"Response Feedback"**.
+
+All of them are describing the same target: **Player Experience**. This encyclopedia serves as a translation layer to help these disciplines align their vocabulary and understand each other's constraints.
+
+---
+
+## Why Projects Succeed or Fail
+
+The quality of communication within a studio directly determines the quality of the final game. When communication breaks down, projects enter a negative feedback loop that often leads to failure.
+
+```mermaid
+flowchart LR
+    PoorCommunication --> Misalignment
+    Misalignment --> Rework
+    Rework --> Delays
+    Delays --> BudgetPressure
+    BudgetPressure --> LowerQuality
+    LowerQuality --> Failure
+```
+
+Conversely, establishing a shared vocabulary builds a positive loop of clear decisions and solid execution.
+
+```mermaid
+flowchart LR
+    SharedVocabulary --> SharedUnderstanding
+    SharedUnderstanding --> BetterDecisions
+    BetterDecisions --> BetterExecution
+    BetterExecution --> BetterGames
+```
+
+Shared understanding is not a luxury; it is one of the most valuable assets a development team can possess.
 
 ---
 
