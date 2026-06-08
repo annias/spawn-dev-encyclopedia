@@ -19,7 +19,7 @@ A collection of parts interacting according to a set of rules to form a unified 
 A system is rarely a single mechanic. Most systems are collections of interconnected mechanics producing emergent outcomes.
 
 ```mermaid
-graph TD
+flowchart TD
     Weapon["Weapon System"] --> Combat["Combat System"]
     Health["Health System"] --> Combat
     Collision["Collision System"] --> Combat
@@ -115,7 +115,7 @@ Designers must carefully balance inflow (faucets) and outflow (sinks/black holes
 Value emerges from scarcity and meaningful spending opportunities.
 
 ```mermaid
-graph LR
+flowchart LR
     ResourceGeneration["Resource Generation"] --> ResourceCirculation["Resource Circulation"]
     ResourceCirculation --> ResourceSpending["Resource Spending"]
     ResourceSpending --> ResourceScarcity["Resource Scarcity"]
@@ -190,7 +190,7 @@ Different systems must be aware of and react to one another (e.g., fire ignites 
 No individual rule creates emergence. Emergence occurs when multiple rules interact.
 
 ```mermaid
-graph TD
+flowchart TD
     Fire["Fire System"] --> Grass["Grass Material"]
     Wind["Wind Direction"] --> Fire
     Rain["Rain System"] --> Fire

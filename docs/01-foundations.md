@@ -83,12 +83,28 @@ They think in terms of:
 - User experience outcomes
 
 ```mermaid
-flowchart TD
-    Root["Professional Thinking"] --> Systems["Systems<br>(Economy, Progression, Combat)"]
-    Root --> Constraints["Constraints<br>(Budget, Time, Team)"]
-    Root --> Risk["Risk<br>(Technical, Production, Market)"]
-    Root --> Tradeoffs["Tradeoffs<br>(Quality, Scope, Speed)"]
-    Root --> Outcomes["Outcomes<br>(Retention, Engagement, Revenue)"]
+mindmap
+root(("Professional Thinking"))
+    Systems
+        Economy
+        Progression
+        Combat
+    Constraints
+        Budget
+        Time
+        Team
+    Risk
+        Technical
+        Production
+        Market
+    Tradeoffs
+        Quality
+        Scope
+        Speed
+    Outcomes
+        Retention
+        Engagement
+        Revenue
 ```
 
 Senior developers think in terms of systems, constraints, risks, tradeoffs, and outcomes rather than individual implementation details. Every addition or change is evaluated by its systemic cost, how it affects production schedules, and the risk it introduces to the project.
@@ -246,22 +262,17 @@ Viewing a game as a network of connected systems prevents the "silo effect," whe
 Just as the game itself is a system of rules, the studio that creates it is a system of specialized, coordinated teams.
 
 ```mermaid
-flowchart LR
-    Studio["Game Studio"] --> Core["Core Creation"]
-    Studio --> Support["Production & QA"]
-    Studio --> Audience["Audience & Growth"]
-
-    Core --> Design["Design"]
-    Core --> Programming["Programming"]
-    Core --> Art["Art"]
-    Core --> Audio["Audio"]
-
-    Support --> Production["Production"]
-    Support --> QA["QA"]
-    Support --> Analytics["Analytics"]
-
-    Audience --> Marketing["Marketing"]
-    Audience --> Community["Community"]
+mindmap
+root(("Game Studio"))
+    Design
+    Programming
+    Art
+    Audio
+    Production
+    QA
+    Marketing
+    Community
+    Analytics
 ```
 
 A successful game requires all parts of the studio to operate as a coherent organism:
